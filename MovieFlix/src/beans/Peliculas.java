@@ -10,5 +10,6 @@ public class Peliculas {
 
 	public void setPutaBidaTete(String putaBidaTete) {
 		this.putaBidaTete = putaBidaTete;
+		System.out.println("lijhlih");
 	}
 }
