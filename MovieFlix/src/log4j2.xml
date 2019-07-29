@@ -2,7 +2,7 @@
 <Configuration>
     <Properties>
         <!---->
-        <Property name="log-path">\\profesor\Curso\Java\Alumnos\Vladimir Juan Robles\Ejercicios\Java SE Complejos (super, biblioteca...)\02_ComplejoBiblioteca_V1\Loggers</Property>
+        <Property name="log-path">\\profesor\Curso\Java\Alumnos\Vladimir Juan Robles\Otros\MovieFlix-github\MovieFlix\MovieFlix\Logger</Property>
     </Properties>
  
     <Appenders>
