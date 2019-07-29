@@ -1,5 +1,7 @@
 package servicios;
 
+import beans.Pelicula;
+
 public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	
@@ -17,7 +19,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	}
 
 	@Override
-	public boolean modificarPelicula() {
+	public boolean modificarPelicula(Pelicula pelicula) {
 		// TODO Auto-generated method stub
 		return false;
 	}
