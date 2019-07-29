@@ -1,0 +1,11 @@
+[DEBUG] - ConectarBD:50 2019-07-29 18:18:45 - Conectando con BD:
+[ INFO] - GenerarInforme:51 2019-07-29 18:18:45 - Cannot determine value type from string 'romantica'
+[DEBUG] - ConectarBD:50 2019-07-29 18:21:48 - Conectando con BD:
+[ INFO] - GenerarInforme:52 2019-07-29 18:21:49 - Cannot determine value type from string 'romantica'
+[DEBUG] - ConectarBD:50 2019-07-29 18:25:16 - Conectando con BD:
+[ INFO] - GenerarInforme:52 2019-07-29 18:25:17 - Cannot determine value type from string 'romantica'
+[DEBUG] - ConectarBD:50 2019-07-29 18:26:41 - Conectando con BD:
+[ INFO] - GenerarInforme:52 2019-07-29 18:26:42 - Cannot determine value type from string 'romantica'
+[DEBUG] - ConectarBD:50 2019-07-29 18:27:20 - Conectando con BD:
+[ INFO] - GenerarInforme:52 2019-07-29 18:27:20 - Cannot determine value type from string 'romantica'
+[DEBUG] - ConectarBD:50 2019-07-29 18:29:11 - Conectando con BD:
