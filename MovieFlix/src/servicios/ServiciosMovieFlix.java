@@ -13,7 +13,8 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	
 	
 	@Override
-	public void altaPelicula() {
+	public void altaPelicula(Pelicula pelicula) {
+		new DatosPelicula().altaPelicula(pelicula);
 	}
 
 	@Override

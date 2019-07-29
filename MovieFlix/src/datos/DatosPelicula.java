@@ -51,7 +51,10 @@ public class DatosPelicula {
 		return this.pelicula.toString();
 	}
 	//metodos principales
-	
+	/**
+	 * 
+	 * @param pelicula
+	 */
 	public void altaPelicula(Pelicula pelicula) {
 		if(DatosPelicula.obtenerPelicula(pelicula)==true) {
 			System.out.println("No se puede dar de alta, ya existe");
@@ -68,9 +71,15 @@ public class DatosPelicula {
 			}
 		}
 	}
-	
+	/**
+	 * 
+	 * @param pelicula
+	 * @return
+	 */
 	public boolean bajaPelicula(Pelicula pelicula) {
-		obtenerPelicula(pelicula);
+		if(obtenerPelicula(pelicula)==true) {
+			
+		}
 		return false;
 	}
 	
@@ -78,7 +87,7 @@ public class DatosPelicula {
 	/**
 	 * @author Jose Miguel
 	 * @param pelicula
-	 * @return
+	 * @return flag
 	 */
 	public static Boolean obtenerPelicula(Pelicula pelicula) {
 		Boolean flag = false;
