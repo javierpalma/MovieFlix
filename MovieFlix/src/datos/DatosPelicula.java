@@ -6,8 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.sql.Statement;
 import beans.Pelicula;
+import control.E05_select;
 import servicios.ConectarBD;
 import beans.Categoria;
 
@@ -100,12 +103,13 @@ public class DatosPelicula {
 	 */
 
 	//Método para ver si la película existe para ver si damos el alta o no, devuelve el boolean para comprobar su existencia
+	//Método modificado para que retorne el id de la clase película para usarlo en otros métodos
 	/**
 	 * @author Jose Miguel
 	 * @param pelicula
 	 * @return
 	 */
-	public static Boolean obtenerPelicula(String nombre) {
+	public static int obtenerPelicula(String nombre) {
 		Boolean flag = false;
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
@@ -135,11 +139,10 @@ public class DatosPelicula {
 				
 				if(p.getNombre().trim().equalsIgnoreCase(nombre)) {
 					System.out.println("La película está disponible");
-					flag = true;
-					return flag;
+					return p.getId();
 				}
 				else {
-					flag = false;
+					return -1;
 				}
 			}
 			stm.close();
@@ -148,9 +151,11 @@ public class DatosPelicula {
 		} catch (SQLException e) {
 			System.out.println("Error: Clase DatosPelicula, método obtenerPelicula");
 			e.printStackTrace();
+			Logger lgr = Logger.getLogger(nombre);
+            lgr.log(Level.INFO, "FALLO EN PARÁMETRO NOMBRE, MÉTODO obtenerPelicula");
 		}
 		
-		return flag;
+		return p.getId();
 	}
 
 }
