@@ -38,7 +38,7 @@ public class DatosPelicula {
 	public String toString() {
 		return this.pelicula.toString();
 	}
-	
+
 	
 	
 
