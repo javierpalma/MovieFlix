@@ -97,14 +97,14 @@ public class DatosPelicula {
 	 * @param pelicula
 	 * @return
 	 */
-	public static Boolean obtenerPelicula(Pelicula pelicula) {
+	public static Boolean obtenerPelicula(String nombre) {
 		Boolean flag = false;
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
 		ResultSet rs=null;
 		
-		String sql="SELECT PELICULA.ID_PELICULA, PELICULA.NOMBRE_PELICULA, PELICULA.ANYO_ESTRENO, CATEGORIA.ID_CATEGORIA, CATEGORIA.NOMBRE FROM PELICULA, CATEGORIA WHERE PELICULA.ID_CATEGORIA = CATEGORIA.ID_CATEGORIA";
+		String sql="SELECT PELICULA.ID_PELICULA, PELICULA.NOMBRE_PELICULA, PELICULA.ANYO_ESTRENO, CATEGORIA.ID_CATEGORIA, CATEGORIA.NOMBRE FROM PELICULA, CATEGORIA WHERE PELICULA.ID_CATEGORIA = CATEGORIA.ID_CATEGORIA ORDER BY PELICULA.ID_PELICULA";
 
 		ArrayList<Pelicula> listaPelicula= new ArrayList<Pelicula>();
 		Pelicula p = new Pelicula();
@@ -121,17 +121,17 @@ public class DatosPelicula {
 				c.setId(rs.getInt(4));
 				c.setNombre(rs.getString(5));
 				p.setCategoria(c);
-				listaPelicula.add(p);
-				System.out.println(p);
-				if(pelicula.getNombre() == p.getNombre()) {
-					System.out.println(p);
-					System.out.println("La Película " + pelicula + " está disponible");
+				//listaPelicula.add(p);
+				//System.out.println(p.getNombre().toLowerCase()==pelicula.getNombre().toLowerCase());
+				//System.out.println(nom.compareTo(nombre));
+				
+				if(p.getNombre().equalsIgnoreCase(nombre)) {
+					System.out.println("La película está disponible");
 					flag = true;
-					//return flag;
+					return flag;
 				}
 				else {
-					//System.out.println("La Película " + pelicula + " no está disponible");
-					
+					flag = false;
 				}
 			}
 			stm.close();

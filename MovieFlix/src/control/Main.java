@@ -14,8 +14,8 @@ public class Main {
 		//ConectarBD con = new ConectarBD();
 		//con.volcarDatos();
 		Categoria c1 = new Categoria(2, "romantica");
-		Pelicula p1 = new Pelicula(1,"La vida es bella", 1997, c1);
-		DatosPelicula.obtenerPelicula(p1);
+		Pelicula p1 = new Pelicula(1,"", 1997, c1);
+		DatosPelicula.obtenerPelicula("me cago en tu puta casta");
 	}
 	
 	
