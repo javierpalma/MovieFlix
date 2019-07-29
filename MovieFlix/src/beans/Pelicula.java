@@ -2,6 +2,12 @@ package beans;
 
 import beans.Categoria;
 
+/**
+ * 
+ * @author José Miguel
+ *
+ */
+
 // Se crea la clase pelicula con atributos id, nombre y año de estreno.
 // Se introduce el atributo categoría perteneciente al tipo Categoria.
 // Se importa la la clase Categoria
@@ -17,6 +23,14 @@ public class Pelicula {
 		// TODO Auto-generated constructor stub	
 	}
 
+	/**
+	 * 
+	 * @param id
+	 * @param nombre
+	 * @param anyoEstreno
+	 * @param categoria
+	 */
+	
 	public Pelicula(int id, String nombre, int anyoEstreno, Categoria categoria) {
 		super();
 		this.id = id;
@@ -24,34 +38,74 @@ public class Pelicula {
 		this.anyoEstreno = anyoEstreno;
 		this.categoria = categoria;
 	}
+	
+	/**
+	 * 
+	 * @return
+	 */
 
 	public int getId() {
 		return id;
 	}
+	
+	/**
+	 * 
+	 * @param id
+	 */
 
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	/**
+	 * 
+	 * @return
+	 */
 
 	public String getNombre() {
 		return nombre;
 	}
+	
+	/**
+	 * 
+	 * @param nombre
+	 */
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+	
+	/**
+	 * 
+	 * @return
+	 */
 
 	public int getAnyoEstreno() {
 		return anyoEstreno;
 	}
+	
+	/**
+	 * 
+	 * @param anyoEstreno
+	 */
 
 	public void setAnyoEstreno(int anyoEstreno) {
 		this.anyoEstreno = anyoEstreno;
 	}
+	
+	/**
+	 * 
+	 * @return
+	 */
 
 	public Categoria getCategoria() {
 		return categoria;
 	}
+	
+	/**
+	 * 
+	 * @param categoria
+	 */
 
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;

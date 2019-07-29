@@ -41,6 +41,11 @@ public class DatosPelicula {
 	public Pelicula getPelicula() {
 		return pelicula;
 	}
+	
+	/**
+	 * 
+	 * @param pelicula
+	 */
 
 	public void setPelicula(Pelicula pelicula) {
 		this.pelicula = pelicula;
@@ -49,29 +54,67 @@ public class DatosPelicula {
 	public String toString() {
 		return this.pelicula.toString();
 	}
+	
+	/**
+	 * 
+	 * @param pelicula
+	 * @return
+	 */
 	//metodos principales
 	
 	public boolean buscarPelicula(Pelicula pelicula) {
 		return false;
 	}
+	
+	/**
+	 * 
+	 * @param pelicula
+	 */
+	
 	public void altaPelicula(Pelicula pelicula) {
 		buscarPelicula(pelicula);
 	}
+	
+	/**
+	 * 
+	 * @param pelicula
+	 * @return
+	 */
 	
 	public boolean bajaPelicula(Pelicula pelicula) {
 		buscarPelicula(pelicula);
 		return false;
 	}
 	
+<<<<<<< HEAD
+<<<<<<< HEAD
+	/**
+	 * 
+	 * @param pelicula
+	 */
+	
 	public static void obtenerPelicula(Pelicula pelicula) {
+=======
+	public static Boolean obtenerPelicula(Pelicula pelicula) {
+		Boolean flag = false;
+>>>>>>> 842fcc14e14054b8ed93663f0e43bde0e178249f
+=======
+	//Método para ver si la película existe para ver si damos el alta o no, devuelve el boolean para comprbar su existencia
+	/**
+	 * @author Jose Miguel
+	 * @param pelicula
+	 * @return
+	 */
+	public static Boolean obtenerPelicula(Pelicula pelicula) {
+		Boolean flag = false;
+>>>>>>> 63d19d2dc0f7ebf6a7efbe3ff486886763341394
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
 		ResultSet rs=null;
 		
-		//String sql="SELECT * FROM CLIENTE ORDER BY ID";
-		//String sql2 ="SELECT 
-		
+		String sql="SELECT PELICULA.ID_PELICULA, PELICULA.NOMBRE_PELICULA, PELICULA.ANYO_ESTRENO, CATEGORIA.ID_CATEGORIA, CATEGORIA.NOMBRE FROM PELICULA, CATEGORIAWHERE PELICULA.ID_PELICULA = CATEGORIA.ID_CATEGORIA";
+
 		ArrayList<Pelicula> listaPelicula= new ArrayList<Pelicula>();
 		Pelicula p = new Pelicula();
 		Categoria c = new Categoria();
@@ -91,9 +134,11 @@ public class DatosPelicula {
 				
 				if(pelicula == p) {
 					System.out.println("La Película " + pelicula + " está disponible");
+					flag = true;
 				}
 				else {
 					System.out.println("La Película " + pelicula + " no está disponible");
+					flag = false;
 				}
 			}
 			stm.close();
@@ -103,6 +148,8 @@ public class DatosPelicula {
 			System.out.println("Error: Clase DatosPelicula, método obtenerPelicula");
 			e.printStackTrace();
 		}
+		
+		return flag;
 	}
 
 }
