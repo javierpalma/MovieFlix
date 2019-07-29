@@ -87,7 +87,7 @@ public class DatosPelicula {
 		java.sql.Statement stm= null;
 		ResultSet rs=null;
 		
-		String sql="SELECT PELICULA.ID_PELICULA, PELICULA.NOMBRE_PELICULA, PELICULA.ANYO_ESTRENO, CATEGORIA.ID_CATEGORIA, CATEGORIA.NOMBRE FROM PELICULA, CATEGORIAWHERE PELICULA.ID_PELICULA = CATEGORIA.ID_CATEGORIA";
+		String sql="SELECT PELICULA.ID_PELICULA, PELICULA.NOMBRE_PELICULA, PELICULA.ANYO_ESTRENO, CATEGORIA.ID_CATEGORIA, CATEGORIA.NOMBRE FROM PELICULA, CATEGORIA WHERE PELICULA.ID_CATEGORIA = CATEGORIA.ID_CATEGORIA";
 
 		ArrayList<Pelicula> listaPelicula= new ArrayList<Pelicula>();
 		Pelicula p = new Pelicula();
@@ -105,14 +105,16 @@ public class DatosPelicula {
 				c.setNombre(rs.getString(5));
 				p.setCategoria(c);
 				listaPelicula.add(p);
-				
-				if(pelicula == p) {
+				System.out.println(p);
+				if(pelicula.getNombre() == p.getNombre()) {
+					System.out.println(p);
 					System.out.println("La Película " + pelicula + " está disponible");
 					flag = true;
+					//return flag;
 				}
 				else {
-					System.out.println("La Película " + pelicula + " no está disponible");
-					flag = false;
+					//System.out.println("La Película " + pelicula + " no está disponible");
+					
 				}
 			}
 			stm.close();
