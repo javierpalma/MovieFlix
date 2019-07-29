@@ -93,8 +93,8 @@ public class DatosPelicula {
 	 * @return
 	 */
 	
-	public boolean bajaPelicula(String nombre) {
-		obtenerPelicula(nombre);
+	public boolean bajaPelicula(Pelicula pelicula) {
+		obtenerPelicula(pelicula.getNombre());
 		return false;
 	}
 

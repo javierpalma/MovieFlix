@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <!---->
+        <Property name="log-path">\\profesor\Curso\Java\Alumnos\Vladimir Juan Robles\Ejercicios\Java SE Complejos (super, biblioteca...)\02_ComplejoBiblioteca_V1\Loggers</Property>
+    </Properties>
+ 
+    <Appenders>
+        <RollingFile name="file-log" fileName="${log-path}/ErroresFechas.log" filePattern="${log-path}/ErroresFechas-%d{yyyy-MM-dd}.log">
+            <PatternLayout pattern="[%5p] - %c{1}:%L %d{yyyy-MM-dd HH:mm:ss} - %m%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"  modulate="true" />
+            </Policies>
+        </RollingFile>
+ 
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%5p] - %c{1}:%L %d{yyyy-MM-dd HH:mm:ss} - %m%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+     
+        <!-- here we restrict the log level by package 
+        <Logger name="com.rrivero.log" level="info" additivity="true">
+            <appender-ref ref="file-log" level="fatal" />
+        </Logger>
+        -->
+         <!-- 
+         Elige el nivel a partir del cual lanzas mensajes.
+         Usa DEBUG para un nivel más bajo
+          -->
+        <Root level="debug">
+            <appender-ref ref="console" />
+            <appender-ref ref="file-log" />
+        </Root>
+    </Loggers>
+</Configuration>
