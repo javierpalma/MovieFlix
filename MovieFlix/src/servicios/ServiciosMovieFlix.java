@@ -36,9 +36,8 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	}	
 
 	@Override
-	public boolean bajaPelicula() {
+	public void bajaPelicula() {
 		new DatosPelicula().bajaPelicula(PedirDatos.pidePelicula());
-		return false;
 	}
 
 	@Override
