@@ -69,7 +69,7 @@ public class DatosPelicula {
 	 */
 	//revisar
 	public void altaPelicula(Pelicula pelicula) {
-		if(buscarPelicula(pelicula)==true) {
+		if(obtenerPelicula()==true) {
 			System.out.println("No se puede añadir, ya se añadio");
 		}
 		else {
@@ -96,11 +96,6 @@ public class DatosPelicula {
 		obtenerPelicula(nombre);
 		return false;
 	}
-
-	/**
-	 * 
-	 * @param pelicula
-	 */
 
 	//Método para ver si la película existe para ver si damos el alta o no, devuelve el boolean para comprobar su existencia
 	//Método modificado para que retorne el id de la clase película para usarlo en otros métodos
