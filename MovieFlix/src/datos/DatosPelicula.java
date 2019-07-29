@@ -99,7 +99,7 @@ public class DatosPelicula {
 		java.sql.Statement stm= null;
 		ResultSet rs=null;
 		int id=-1;
-		String sql="SELECT * FROM PELICULA WHERE ID_PELICULA=";
+		String sql="DELETE * FROM PELICULA WHERE ID_PELICULA=";
 		boolean baja = false;
 		
 		if((id=obtenerPelicula(pelicula.getNombre()))!=-1) {
