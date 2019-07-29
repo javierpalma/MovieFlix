@@ -85,20 +85,12 @@ public class DatosPelicula {
 		buscarPelicula(pelicula);
 		return false;
 	}
-	
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 	/**
 	 * 
 	 * @param pelicula
 	 */
-	
-	public static void obtenerPelicula(Pelicula pelicula) {
-=======
-	public static Boolean obtenerPelicula(Pelicula pelicula) {
-		Boolean flag = false;
->>>>>>> 842fcc14e14054b8ed93663f0e43bde0e178249f
-=======
+
 	//Método para ver si la película existe para ver si damos el alta o no, devuelve el boolean para comprbar su existencia
 	/**
 	 * @author Jose Miguel
@@ -107,7 +99,6 @@ public class DatosPelicula {
 	 */
 	public static Boolean obtenerPelicula(Pelicula pelicula) {
 		Boolean flag = false;
->>>>>>> 63d19d2dc0f7ebf6a7efbe3ff486886763341394
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
