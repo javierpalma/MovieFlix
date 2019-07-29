@@ -48,7 +48,19 @@ public class DatosPelicula {
 	public String toString() {
 		return this.pelicula.toString();
 	}
+	//metodos principales
 	
+	public boolean buscarPelicula(Pelicula pelicula) {
+		return false;
+	}
+	public void altaPelicula(Pelicula pelicula) {
+		buscarPelicula(pelicula);
+	}
+	
+	public boolean bajaPelicula(Pelicula pelicula) {
+		buscarPelicula(pelicula);
+		return false;
+	}
 	
 	public static void obtenerPelicula(Pelicula pelicula) {
 		Connection co =null;
