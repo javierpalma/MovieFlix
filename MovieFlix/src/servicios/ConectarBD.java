@@ -11,10 +11,16 @@ import java.io.Reader;
 import java.io.FileReader;
 import java.io.BufferedReader;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.Level;
+
 /**
-*
-* @author Javier Palma
-*/
+ * 
+ * @author Javier Palma
+ *	
+ * @version 1.0
+ */
 
 public class ConectarBD {
 	
@@ -28,7 +34,10 @@ public class ConectarBD {
 		super();
 	}
 
-	//el metodo conectarBD devuelve la conexión a la bd
+	/** 
+	 * @param String base de datos
+	 * el metodo conectarBD devuelve la conexión a la bd
+	 */
 	public Connection conectarBD(String bd) {
 		Connection con = null;
 		this.bd = url+bd+this.dataZone;
@@ -37,10 +46,19 @@ public class ConectarBD {
 			return con;
 		}
 		catch (SQLException ex) {
-			System.out.println(ex.getMessage());
+			try {
+				Logger log = LogManager.getLogger();
+				log.trace("Error al conectar en BD: "+ex.getMessage());
+			}catch (Throwable e) {
+				System.out.println(e.getMessage());
+			}
 		}
 		return null;
 	} 
+	
+	/** 
+	 * @param Este método solo se ejecuta una vez, para insertar los datos del txt
+	 */
 	
 	public void volcarDatos() {
 		File f_txt = new File("peliculas_numCat.txt");
