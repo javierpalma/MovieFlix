@@ -63,6 +63,12 @@ public class DatosPelicula {
 		return false;
 	}
 	
+	//Método para ver si la película existe para ver si damos el alta o no, devuelve el boolean para comprbar su existencia
+	/**
+	 * @author Jose Miguel
+	 * @param pelicula
+	 * @return
+	 */
 	public static Boolean obtenerPelicula(Pelicula pelicula) {
 		Boolean flag = false;
 		Connection co =null;
@@ -70,9 +76,8 @@ public class DatosPelicula {
 		java.sql.Statement stm= null;
 		ResultSet rs=null;
 		
-		//String sql="SELECT * FROM CLIENTE ORDER BY ID";
-		//String sql2 ="SELECT 
-		
+		String sql="SELECT PELICULA.ID_PELICULA, PELICULA.NOMBRE_PELICULA, PELICULA.ANYO_ESTRENO, CATEGORIA.ID_CATEGORIA, CATEGORIA.NOMBRE FROM PELICULA, CATEGORIAWHERE PELICULA.ID_PELICULA = CATEGORIA.ID_CATEGORIA";
+
 		ArrayList<Pelicula> listaPelicula= new ArrayList<Pelicula>();
 		Pelicula p = new Pelicula();
 		Categoria c = new Categoria();
