@@ -92,9 +92,34 @@ public class DatosPelicula {
 	 * @return
 	 */
 	
-	public boolean bajaPelicula(String nombre) {
-		obtenerPelicula(nombre);
-		return false;
+	public boolean bajaPelicula(Pelicula pelicula) {
+		
+		Connection co =null;
+		ConectarBD conect = new ConectarBD();
+		java.sql.Statement stm= null;
+		ResultSet rs=null;
+		int id=-1;
+		String sql="SELECT * FROM PELICULA WHERE ID_PELICULA=";
+		boolean baja = false;
+		
+		if((id=obtenerPelicula(pelicula.getNombre()))!=-1) {
+			
+			try {
+				co= conect.conectarBD("movieflix") ;
+				stm=co.createStatement();
+				rs=stm.executeQuery(sql+id);
+				baja= true;
+				
+			} catch (SQLException e) {
+				
+				System.out.println("Error: Clase DatosPelicula, método bajaPelicula");
+				e.printStackTrace();
+				Logger lgr = Logger.getLogger(pelicula.getNombre());
+	            lgr.log(Level.INFO, "FALLO EN PARÁMETRO NOMBRE, MÉTODO bajaPelicula");
+			}
+			
+		}
+		return baja;
 	}
 
 	//Método para ver si la película existe para ver si damos el alta o no, devuelve el boolean para comprobar su existencia
