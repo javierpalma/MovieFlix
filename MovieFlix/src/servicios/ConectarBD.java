@@ -3,6 +3,8 @@ package servicios;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import java.io.File;
 import java.io.Reader;
@@ -42,23 +44,23 @@ public class ConectarBD {
 	public void volcarDatos() {
 		File f_txt = new File("peliculas_numCat.txt");
 		Connection con;
+		PreparedStatement pst = null;
 		String linea;
 		
 		try {
 			Reader r = new FileReader(f_txt);
 			BufferedReader br = new BufferedReader (r);
+			linea = br.readLine();
 			do{
-				linea = br.readLine();
 				String[]datos = linea.split(",");
 				con=this.conectarBD("movieflix");
-				
+				pst = con.prepareStatement("INSERT INTO pelicula(nombre,anyoEstreno,id_categoria VALUES ("+datos[0]+","+datos[1]+","+datos[2]+")");
+				linea = br.readLine();
 				
 			}while(linea !="FEOF");
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
-		}
-		
-		
+		}	
 		
 	}
 }
