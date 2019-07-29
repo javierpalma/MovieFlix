@@ -56,16 +56,8 @@ public class DatosPelicula {
 		return this.pelicula.toString();
 	}
 	
-	/**
-	 * 
-	 * @param pelicula
-	 * @return
-	 */
 	//metodos principales
 	
-	public boolean buscarPelicula(Pelicula pelicula) {
-		return false;
-	}
 	
 	/**
 	 * 
