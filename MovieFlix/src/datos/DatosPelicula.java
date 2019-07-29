@@ -7,7 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 import java.sql.Statement;
 import beans.Pelicula;
 
@@ -111,6 +112,8 @@ public class DatosPelicula {
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
 		ResultSet rs=null;
+		Logger logger = LogManager.getLogger(); 
+
 		
 		String sql="SELECT PELICULA.ID_PELICULA, PELICULA.NOMBRE_PELICULA, PELICULA.ANYO_ESTRENO, CATEGORIA.ID_CATEGORIA, CATEGORIA.NOMBRE FROM PELICULA, CATEGORIA WHERE PELICULA.ID_CATEGORIA = CATEGORIA.ID_CATEGORIA ORDER BY PELICULA.ID_PELICULA";
 
@@ -146,37 +149,50 @@ public class DatosPelicula {
 			co.close();
 		} catch (SQLException e) {
 			System.out.println("Error: Clase DatosPelicula, método obtenerPelicula");
-			e.printStackTrace();
-			Logger lgr = Logger.getLogger(nombre);
-            lgr.log(Level.INFO, "FALLO EN PARÁMETRO NOMBRE, MÉTODO obtenerPelicula");
+			logger.info(e.getMessage());
 		}
 		
 		return p.getId();
 	}
 	
+	
+	/**
+	 * @author Jose Miguel
+	 * @param pelicula
+	 * @return boolean
+	 */
+	//Método que realiza una modificación a la tabla Película filtrado por su ID que viene recibida por el método obtenerPelícula
+	//Modificación para que el id_categoria esté entre 1 y 6
 	public static Boolean modificaPelicula(Pelicula pelicula) {
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
 		ResultSet rs=null;		
-	
-
-		boolean actualizar=false;
-				
-		String sql="UPDATE PELICULA SET NOMBRE_PELICULA ='"+ pelicula.getNombre()+"', ANYO_ESTRENO ='"+ pelicula.getAnyoEstreno()+"', ID_CATEGORIA ='"+ pelicula.getCategoria()+"'" +" WHERE ID_PELICULA ="+pelicula.getId();
+		Logger logger = LogManager.getLogger(); 
+		boolean flag=false;
+		
+		if(pelicula.getCategoria().getId() > 0 && pelicula.getCategoria().getId() < 7){
+		String sql="UPDATE PELICULA SET NOMBRE_PELICULA ='"+ pelicula.getNombre()+"', ANYO_ESTRENO ='"+ pelicula.getAnyoEstreno()+"', ID_CATEGORIA ='"+ pelicula.getCategoria().getId()+"'" +" WHERE ID_PELICULA ="+pelicula.getId();
 		try {
 			co= conect.conectarBD("movieflix") ;
 			stm=co.createStatement();
 			rs=stm.executeQuery(sql);
 			
-			actualizar=true;
+			flag=true;
 			
 		} catch (SQLException e) {
 			System.out.println("Error: Clase ClienteDaoImple, método actualizar");
-			e.printStackTrace();
+			logger.info(e.getMessage());
+			
+	
 		}
 		
-		return actualizar;
 	}
-
+	
+	else {
+		System.out.println("El id_categoría está fuera de rango");
+	}
+		return flag;
+		
+}
 }
