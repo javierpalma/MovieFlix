@@ -63,7 +63,8 @@ public class DatosPelicula {
 		return false;
 	}
 	
-	public static void obtenerPelicula(Pelicula pelicula) {
+	public static Boolean obtenerPelicula(Pelicula pelicula) {
+		Boolean flag = false;
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
@@ -91,9 +92,11 @@ public class DatosPelicula {
 				
 				if(pelicula == p) {
 					System.out.println("La Película " + pelicula + " está disponible");
+					flag = true;
 				}
 				else {
 					System.out.println("La Película " + pelicula + " no está disponible");
+					flag = false;
 				}
 			}
 			stm.close();
@@ -103,6 +106,8 @@ public class DatosPelicula {
 			System.out.println("Error: Clase DatosPelicula, método obtenerPelicula");
 			e.printStackTrace();
 		}
+		
+		return flag;
 	}
 
 }
