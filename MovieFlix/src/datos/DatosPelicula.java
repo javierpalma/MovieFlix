@@ -10,7 +10,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.Statement;
 import beans.Pelicula;
-import control.E05_select;
 import servicios.ConectarBD;
 import beans.Categoria;
 
