@@ -1,8 +1,5 @@
 package servicios;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,6 +10,7 @@ import datos.DatosPelicula;
 public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	
+
 	@SuppressWarnings("resource")
 	public void altaPelicula() {
 		//pedir datos de pelicula a dar de alta
@@ -30,10 +28,10 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		c.setNombre(nombreCategoria);
 		pelicula.setCategoria(c);
 		new DatosPelicula().altaPelicula(pelicula);
-	}
+	}	
 
 	@Override
-	public boolean bajaPelicula(Pelicula pelicula) {
+	public boolean bajaPelicula() {
 		// TODO Auto-generated method stub
 		return false;
 	}
