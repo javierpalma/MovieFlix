@@ -3,12 +3,13 @@ package datos;
 import java.awt.List;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
-
+import java.sql.Statement;
 import beans.Pelicula;
 import servicios.ConectarBD;
+import beans.Categoria;
 
-import com.mysql.cj.xdevapi.Statement;
 
 import beans.Pelicula;
 
@@ -64,30 +65,42 @@ public class DatosPelicula {
 	
 	public static void obtenerPelicula(Pelicula pelicula) {
 		Connection co =null;
-		Statement stm= null;
+		ConectarBD conect = new ConectarBD();
+		java.sql.Statement stm= null;
 		ResultSet rs=null;
 		
 		//String sql="SELECT * FROM CLIENTE ORDER BY ID";
+		//String sql2 ="SELECT 
 		
-		ArrayList<Pelicula> listaCliente= new ArrayList<Pelicula>();
+		ArrayList<Pelicula> listaPelicula= new ArrayList<Pelicula>();
+		Pelicula p = new Pelicula();
+		Categoria c = new Categoria();
 		
 		try {			
-			co= ConectarBD.conectarBD("movieflix");
+			co= conect.conectarBD("movieflix") ;
 			stm=co.createStatement();
 			rs=stm.executeQuery(sql);
 			while (rs.next()) {
-				Cliente c=new Cliente();
-				c.setId(rs.getInt(1));
-				c.setCedula(rs.getString(2));
-				c.setNombre(rs.getString(3));
-				c.setApellido(rs.getString(4));
-				listaCliente.add(c);
+				p.setId(rs.getInt(1));
+				p.setNombre(rs.getString(2));
+				p.setAnyoEstreno(rs.getInt(3));
+				c.setId(rs.getInt(4));
+				c.setNombre(rs.getString(5));
+				p.setCategoria(c);
+				listaPelicula.add(p);
+				
+				if(pelicula == p) {
+					System.out.println("La Película " + pelicula + " está disponible");
+				}
+				else {
+					System.out.println("La Película " + pelicula + " no está disponible");
+				}
 			}
 			stm.close();
 			rs.close();
 			co.close();
 		} catch (SQLException e) {
-			System.out.println("Error: Clase ClienteDaoImple, método obtener");
+			System.out.println("Error: Clase DatosPelicula, método obtenerPelicula");
 			e.printStackTrace();
 		}
 	}
