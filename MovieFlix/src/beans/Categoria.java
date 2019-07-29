@@ -1,9 +1,13 @@
 package beans;
 
+/**
+ * 
+ * @author Asiel
+ *
+ */
 //Se crea la clase categoría con atributos id y nombre.
 
 public class Categoria {
-	
 	
 	private int id;
 	private String nombre;
