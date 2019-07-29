@@ -11,4 +11,5 @@ public interface I_ServiciosMovieFlix {
 	public boolean bajaPelicula();
 	public boolean modificarPelicula(Pelicula pelicula);
 	public List<Pelicula> listar();
+	public void arrancarAplicacion();
 }

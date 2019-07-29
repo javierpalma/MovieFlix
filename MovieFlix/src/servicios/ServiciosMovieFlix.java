@@ -31,6 +31,12 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void arrancarAplicacion() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 
