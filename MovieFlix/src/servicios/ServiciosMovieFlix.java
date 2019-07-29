@@ -4,16 +4,31 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
+import java.util.Scanner;
 
+import beans.Categoria;
 import beans.Pelicula;
 import datos.DatosPelicula;
 
 public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	
-	
-	@Override
-	public void altaPelicula(Pelicula pelicula) {
+	@SuppressWarnings("resource")
+	public void altaPelicula() {
+		//pedir datos de pelicula a dar de alta
+		System.out.println("Nombre pelicula: ");
+		String nombre=new Scanner(System.in).nextLine();
+		System.out.println("Año pelicula: ");
+		int anyo=new Scanner(System.in).nextInt();
+		System.out.println("Categoria: ");
+		String nombreCategoria=new Scanner(System.in).nextLine();
+		//pasamos los valores a una nueva instancia de pelicula.
+		Pelicula pelicula= new Pelicula();
+		Categoria c= new Categoria();
+		pelicula.setNombre(nombre);
+		pelicula.setAnyoEstreno(anyo);
+		c.setNombre(nombreCategoria);
+		pelicula.setCategoria(c);
 		new DatosPelicula().altaPelicula(pelicula);
 	}
 
