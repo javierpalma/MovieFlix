@@ -157,5 +157,30 @@ public class DatosPelicula {
 		
 		return p.getId();
 	}
+	
+	public static Boolean modificaPelicula(Pelicula pelicula) {
+		Connection co =null;
+		ConectarBD conect = new ConectarBD();
+		java.sql.Statement stm= null;
+		ResultSet rs=null;		
+	
+
+		boolean actualizar=false;
+				
+		String sql="UPDATE PELICULA SET NOMBRE_PELICULA ='"+ pelicula.getNombre()+"', ANYO_ESTRENO ='"+ pelicula.getAnyoEstreno()+"', ID_CATEGORIA ='"+ pelicula.getCategoria()+"'" +" WHERE ID_PELICULA ="+pelicula.getId();
+		try {
+			co= conect.conectarBD("movieflix") ;
+			stm=co.createStatement();
+			rs=stm.executeQuery(sql);
+			
+			actualizar=true;
+			
+		} catch (SQLException e) {
+			System.out.println("Error: Clase ClienteDaoImple, método actualizar");
+			e.printStackTrace();
+		}
+		
+		return actualizar;
+	}
 
 }
