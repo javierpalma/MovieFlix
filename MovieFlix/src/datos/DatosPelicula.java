@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.Statement;
 import beans.Pelicula;
-import control.E05_select;
+
 import servicios.ConectarBD;
 import beans.Categoria;
 
@@ -69,7 +69,8 @@ public class DatosPelicula {
 	 */
 	//revisar
 	public void altaPelicula(Pelicula pelicula) {
-		if(obtenerPelicula()==true) {
+		PreparedStatement pt=null;
+		if(obtenerPelicula(pelicula.getNombre())!=-1) {
 			System.out.println("No se puede añadir, ya se añadio");
 		}
 		else {
@@ -77,7 +78,7 @@ public class DatosPelicula {
 			ConectarBD con=new ConectarBD();
 			co=con.conectarBD("MovieFlix");
 			try {
-				PreparedStatement pt= co.prepareStatement("INSERT INTO pelicula (nombre_pelicula,anyo_estreno,id_categoria) VALUES ( pelicula.getID()+","+pelicula.getNombre()+","+pelicula.getAnyoEstreno()+)");
+				pt= co.prepareStatement("INSERT INTO pelicula (nombre_pelicula,anyo_estreno,id_categoria) VALUES ( "+pelicula.getId()+","+pelicula.getNombre()+","+pelicula.getAnyoEstreno()+")");
 				pt.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
