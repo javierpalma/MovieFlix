@@ -8,8 +8,8 @@ public class Main {
 		// TODO Auto-generated method stub
 
 		//ServiciosMovieFlix.arrancarAplicacion();
-		ConectarBD con = new ConectarBD();
-		con.volcarDatos();
+		//ConectarBD con = new ConectarBD();
+		//con.volcarDatos();
 	}
 
 }
