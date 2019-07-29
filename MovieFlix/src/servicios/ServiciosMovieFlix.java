@@ -1,5 +1,7 @@
 package servicios;
 
+import java.util.List;
+
 import beans.Pelicula;
 
 public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
@@ -22,6 +24,12 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	public boolean modificarPelicula(Pelicula pelicula) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public List<Pelicula> listar() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
