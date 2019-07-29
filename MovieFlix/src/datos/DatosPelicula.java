@@ -99,7 +99,7 @@ public class DatosPelicula {
 	 * @param pelicula
 	 */
 
-	//Método para ver si la película existe para ver si damos el alta o no, devuelve el boolean para comprbar su existencia
+	//Método para ver si la película existe para ver si damos el alta o no, devuelve el boolean para comprobar su existencia
 	/**
 	 * @author Jose Miguel
 	 * @param pelicula
@@ -133,7 +133,7 @@ public class DatosPelicula {
 				//System.out.println(p.getNombre().toLowerCase()==pelicula.getNombre().toLowerCase());
 				//System.out.println(nom.compareTo(nombre));
 				
-				if(p.getNombre().equalsIgnoreCase(nombre)) {
+				if(p.getNombre().trim().equalsIgnoreCase(nombre)) {
 					System.out.println("La película está disponible");
 					flag = true;
 					return flag;
