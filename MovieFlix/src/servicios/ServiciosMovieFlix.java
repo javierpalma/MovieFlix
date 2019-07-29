@@ -14,6 +14,9 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	@SuppressWarnings("resource")
 	public void altaPelicula() {
+		new DatosPelicula().altaPelicula(PedirDatos.pidePelicula());
+		
+		
 		//pedir datos de pelicula a dar de alta
 		/*System.out.println("Nombre pelicula: ");
 		String nombre=new Scanner(System.in).nextLine();
@@ -29,12 +32,12 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		c.setNombre(nombreCategoria);
 		pelicula.setCategoria(c);
 		new DatosPelicula().altaPelicula(pelicula);*/
-		new DatosPelicula().altaPelicula(PedirDatos.pidePelicula());
+		
 	}	
 
 	@Override
 	public boolean bajaPelicula() {
-		// TODO Auto-generated method stub
+		new DatosPelicula().bajaPelicula(PedirDatos.pidePelicula());
 		return false;
 	}
 
