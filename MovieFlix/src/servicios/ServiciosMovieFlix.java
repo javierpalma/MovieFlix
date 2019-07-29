@@ -6,6 +6,7 @@ import java.util.Scanner;
 import beans.Categoria;
 import beans.Pelicula;
 import datos.DatosPelicula;
+import utilidades.PedirDatos;
 
 public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
@@ -14,7 +15,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	@SuppressWarnings("resource")
 	public void altaPelicula() {
 		//pedir datos de pelicula a dar de alta
-		System.out.println("Nombre pelicula: ");
+		/*System.out.println("Nombre pelicula: ");
 		String nombre=new Scanner(System.in).nextLine();
 		System.out.println("Año pelicula: ");
 		int anyo=new Scanner(System.in).nextInt();
@@ -27,7 +28,8 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		pelicula.setAnyoEstreno(anyo);
 		c.setNombre(nombreCategoria);
 		pelicula.setCategoria(c);
-		new DatosPelicula().altaPelicula(pelicula);
+		new DatosPelicula().altaPelicula(pelicula);*/
+		new DatosPelicula().altaPelicula(PedirDatos.pidePelicula());
 	}	
 
 	@Override
