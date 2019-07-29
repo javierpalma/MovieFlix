@@ -1,8 +1,12 @@
 package servicios;
 
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 import beans.Pelicula;
+import datos.DatosPelicula;
 
 public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
@@ -10,12 +14,10 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	
 	@Override
 	public void altaPelicula() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
-	public boolean bajaPelicula() {
+	public boolean bajaPelicula(Pelicula pelicula) {
 		// TODO Auto-generated method stub
 		return false;
 	}
