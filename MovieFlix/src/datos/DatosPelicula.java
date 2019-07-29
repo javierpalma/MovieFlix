@@ -2,6 +2,7 @@ package datos;
 
 import java.awt.List;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -69,10 +70,25 @@ public class DatosPelicula {
 	/**
 	 * 
 	 * @param pelicula
+	 * Damos de alta una pelicula
 	 */
-	
+	//revisar
 	public void altaPelicula(Pelicula pelicula) {
-		buscarPelicula(pelicula);
+		if(buscarPelicula(pelicula)==true) {
+			System.out.println("No se puede añadir, ya se añadio");
+		}
+		else {
+			Connection co=null;
+			ConectarBD con=new ConectarBD();
+			co=con.conectarBD("MovieFlix");
+			try {
+				PreparedStatement pt= co.prepareStatement("INSERT INTO pelicula (nombre_pelicula,anyo_estreno,id_categoria) VALUES ('"+pelicula.getId()+"',"+pelicula.getNombre()+","+pelicula.getAnyoEstreno()+");");
+				pt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+		}
 	}
 	
 	/**
@@ -81,7 +97,7 @@ public class DatosPelicula {
 	 * @return
 	 */
 	
-	public boolean bajaPelicula(Pelicula pelicula) {
+	public boolean bajaPelicula(String nombre) {
 		buscarPelicula(pelicula);
 		return false;
 	}
