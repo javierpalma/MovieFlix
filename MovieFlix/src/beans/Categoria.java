@@ -1,15 +1,15 @@
 package beans;
 
-public class Categoría {
+public class Categoria {
 	
 	private int id;
 	private String nombre;
 	
-	public Categoría() {
+	public Categoria() {
 		super();
 	}
 
-	public Categoría(int id, String nombre) {
+	public Categoria(int id, String nombre) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
