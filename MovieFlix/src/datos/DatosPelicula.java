@@ -2,7 +2,6 @@ package datos;
 
 import java.awt.List;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -42,6 +41,11 @@ public class DatosPelicula {
 	public Pelicula getPelicula() {
 		return pelicula;
 	}
+	
+	/**
+	 * 
+	 * @param pelicula
+	 */
 
 	public void setPelicula(Pelicula pelicula) {
 		this.pelicula = pelicula;
@@ -50,47 +54,60 @@ public class DatosPelicula {
 	public String toString() {
 		return this.pelicula.toString();
 	}
-	//metodos principales
-	/**
-	 * 
-	 * @param pelicula
-	 */
-	public void altaPelicula(Pelicula pelicula) {
-		if(DatosPelicula.obtenerPelicula(pelicula)==true) {
-			System.out.println("No se puede dar de alta, ya existe");
-		}
-		else {
-			
-			try {
-				Connection co= new ConectarBD().conectarBD("MovieFlix");
-				PreparedStatement st= co.prepareStatement("INSERT INTO pelicula (nombre_pelicula,anyo_estreno,id_categoria) VALUES ('"+pelicula.getId()+"',"+pelicula.getNombre()+","+pelicula.getAnyoEstreno());
-				st.executeUpdate();
-				System.out.println("Se dio de alta.");
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-	}
+	
 	/**
 	 * 
 	 * @param pelicula
 	 * @return
 	 */
-	public boolean bajaPelicula(Pelicula pelicula) {
-		if(obtenerPelicula(pelicula)==true) {
-			
-		}
+	//metodos principales
+	
+	public boolean buscarPelicula(Pelicula pelicula) {
 		return false;
 	}
 	
+	/**
+	 * 
+	 * @param pelicula
+	 */
+	
+	public void altaPelicula(Pelicula pelicula) {
+		buscarPelicula(pelicula);
+	}
+	
+	/**
+	 * 
+	 * @param pelicula
+	 * @return
+	 */
+	
+	public boolean bajaPelicula(Pelicula pelicula) {
+		buscarPelicula(pelicula);
+		return false;
+	}
+	
+<<<<<<< HEAD
+<<<<<<< HEAD
+	/**
+	 * 
+	 * @param pelicula
+	 */
+	
+	public static void obtenerPelicula(Pelicula pelicula) {
+=======
+	public static Boolean obtenerPelicula(Pelicula pelicula) {
+		Boolean flag = false;
+>>>>>>> 842fcc14e14054b8ed93663f0e43bde0e178249f
+=======
 	//Método para ver si la película existe para ver si damos el alta o no, devuelve el boolean para comprbar su existencia
 	/**
 	 * @author Jose Miguel
 	 * @param pelicula
-	 * @return flag
+	 * @return
 	 */
 	public static Boolean obtenerPelicula(Pelicula pelicula) {
 		Boolean flag = false;
+>>>>>>> 63d19d2dc0f7ebf6a7efbe3ff486886763341394
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
