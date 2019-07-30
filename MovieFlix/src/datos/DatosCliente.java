@@ -169,5 +169,24 @@ public class DatosCliente {
 			logger.info("Error: clase DatosClientes, metodo asignarCategoria");
 		}
 	}
+	
+	public void asignarCatalogoCliente(Cliente cliente, Categoria categoria) {
+		Connection co=null;
+		ConectarBD conect= new ConectarBD();
+		Logger logger= LogManager.getLogger();
+		ArrayList<Categoria> lista=new ArrayList<>();
+		
+		try {
+			co=conect.conectarBD("movieFlix");
+			java.sql.Statement stm=co.createStatement();
+			
+			for(Categoria cate: lista) {
+			}
+			
+		}catch(SQLException e) {
+			
+		}
+		
+	}
 
 }
