@@ -7,6 +7,7 @@ import beans.Categoria;
 import beans.Pelicula;
 import datos.DatosPelicula;
 import datos.GenerarInforme;
+import utilidades.Menu;
 import utilidades.PedirDatos;
 
 public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
@@ -56,6 +57,19 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	@Override
 	public void arrancarAplicacion() {
 		
+		Menu.mostrarMenu();
+		int opcion=new Scanner(System.in).nextInt();
+		
+		switch(opcion) {
+			case 1:
+			case 2:
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+			case 7:
+			case 0:
+		}
 		
 	}
 	
