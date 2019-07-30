@@ -174,17 +174,18 @@ public class DatosCliente {
 		Connection co=null;
 		ConectarBD conect= new ConectarBD();
 		Logger logger= LogManager.getLogger();
-		ArrayList<Categoria> lista=new ArrayList<>();
+		
+		String sql="INSERT INTO cliente_categoria VALUES ("+cliente.getIdCliente() + ","+categoria.getId()+")" ;
 		
 		try {
 			co=conect.conectarBD("movieFlix");
 			java.sql.Statement stm=co.createStatement();
+			ResultSet rs= stm.executeQuery(sql);
 			
-			for(Categoria cate: lista) {
-			}
+			asignarCategoriaCliente(cliente, categoria);
 			
 		}catch(SQLException e) {
-			
+			logger.info("No se puede insertar");
 		}
 		
 	}
