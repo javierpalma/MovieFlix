@@ -5,8 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 
-import com.mysql.cj.x.protobuf.MysqlxNotice.Warning.Level;
-
 import beans.Cliente;
 import beans.Pelicula;
 import servicios.ConectarBD;
