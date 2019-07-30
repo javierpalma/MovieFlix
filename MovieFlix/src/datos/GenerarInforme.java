@@ -10,6 +10,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import beans.Categoria;
+import beans.Cliente;
 import beans.Pelicula;
 import servicios.ConectarBD;
 
@@ -91,12 +92,58 @@ public class GenerarInforme {
 			rs.close();
 			co.close();
 		} catch (SQLException e) {
-			System.out.println("Error: Clase GenerarInforme, método ListarPelicula");
+			System.out.println("Error: Clase GenerarInforme, método ListarPeliculaPorCategoría");
 			logger.info(e.getMessage());
 		}
 		
 		return listaPelicula;
 	}
+	
+	public ArrayList<Pelicula> listarPeliculasCliente(Cliente cliente){
+		Connection co =null;
+		ConectarBD conect = new ConectarBD();
+		java.sql.Statement stm= null;
+		ResultSet rs=null;
+		Logger logger = LogManager.getLogger(); 
+		
+		String sql="SELECT * FROM CLIENTE_PELICULA, PELICULA, categoria WHERE ID_CLIENTE ="+cliente.getIdCliente()+" AND  cliente_pelicula.id_pelicula = pelicula.id_pelicula AND pelicula.id_categoria = categoria.nombre;";
+		
+		ArrayList<Pelicula> listaPelicula= new ArrayList<Pelicula>();
+		
+		try {			
+			co= conect.conectarBD("movieflix") ;
+			stm=co.createStatement();
+			rs=stm.executeQuery(sql);
+			while (rs.next()) {
+	
+				Cliente c = new Cliente();
+				Pelicula p = new Pelicula();
+				Categoria cat = new Categoria();
+				
+				c.setIdCliente(rs.getInt(1));
+				p.setId(rs.getInt(2));
+				p.setNombre(rs.getString(6));
+				p.setAnyoEstreno(rs.getInt(7));
+				cat.setId(rs.getInt(9));
+				cat.setNombre(rs.getString(11));
+				
+				
+				listaPelicula.add(p);
+				//System.out.println(p);
+				
+			}
+			stm.close();
+			rs.close();
+			co.close();
+		} catch (SQLException e) {
+			System.out.println("Error: Clase GenerarInforme, método ListarPeliculaCliente");
+			logger.info(e.getMessage());
+		}
+		
+		return listaPelicula;
+	}
+	
+	
 	
 	
 	
