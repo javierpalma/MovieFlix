@@ -175,7 +175,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 			//llamar al altarCliente de la clase DatosCliente
 			dc.altaCliente(c);
 		}else {
-			System.out.println("Ese cliente ya existe");
+			System.out.println("Ese cliente ya existe, no se puede crear.");
 		}
 		
 	}
@@ -193,7 +193,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 			//llamar al altarCliente de la clase DatosCliente
 			dc.altaCliente(c);
 		}else {
-			System.out.println("El cliente ya existe, no se puede crear.");
+			System.out.println("El cliente no existe, no se puede borrar.");
 		}
 		
 		
