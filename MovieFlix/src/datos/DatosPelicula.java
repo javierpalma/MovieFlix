@@ -196,7 +196,7 @@ public class DatosPelicula {
 			actualizar=true;
 			
 		} catch (SQLException e) {
-			System.out.println("Error: Clase ClienteDaoImple, método actualizar");
+			System.out.println("Error: Clase DatosPelicula, método actualizar");
 			e.printStackTrace();
 		}
 		
