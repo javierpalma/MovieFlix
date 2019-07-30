@@ -108,6 +108,24 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 			}
 		}while(opcion!=0);
 	}
+
+	@Override
+	public void listarPeliculaCliente() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void listarPeliculaNoVistaCliente() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void listarPeliculaPorValoracion() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 
