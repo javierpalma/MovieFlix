@@ -15,7 +15,7 @@ public class PedirCliente {
 	private static Logger logger = LogManager.getLogger();
 	private static int anio, mes, dia;
 	
-	public static Cliente pedirCliente() {
+	public static Cliente pideCliente() {
 	
 		System.out.println("Nombre usuario: ");
 		String nombre=new Scanner(System.in).nextLine();
