@@ -91,17 +91,17 @@ public class DatosPelicula {
 	 * @return
 	 */
 	
-	public boolean bajaPelicula(Pelicula pelicula) {
+	public boolean bajaPelicula(String nombre) {
 		
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
 		ResultSet rs=null;
-		int id=-1;
-		String sql="DELETE * FROM PELICULA WHERE ID_PELICULA=";
+		int id= this.obtenerPelicula(nombre);
+		String sql="DELETE * FROM PELICULA WHERE ID_PELICULA="+id;
 		boolean baja = false;
 		
-		if((id=obtenerPelicula(pelicula.getNombre()))!=-1) {
+		if(id!=-1) {
 			
 			try {
 				co= conect.conectarBD("movieflix") ;

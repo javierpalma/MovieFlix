@@ -32,12 +32,12 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		c.setNombre(nombreCategoria);
 		pelicula.setCategoria(c);
 		new DatosPelicula().altaPelicula(pelicula);*/
-		
 	}	
 
 	@Override
 	public void bajaPelicula() {
-		new DatosPelicula().bajaPelicula(PedirDatos.pidePelicula());
+		new DatosPelicula().bajaPelicula(PedirDatos.pidePelicula().getNombre());
+		
 	}
 
 	@Override
