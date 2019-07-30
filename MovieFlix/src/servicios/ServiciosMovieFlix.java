@@ -61,14 +61,14 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		int opcion=new Scanner(System.in).nextInt();
 		
 		switch(opcion) {
-			case 1:
-			case 2:
-			case 3:
-			case 4:
+			case 1: this.altaPelicula();break;
+			case 2:	this.bajaPelicula();break;
+			case 3: this.modificarPelicula();break;
+			case 4:	
 			case 5:
 			case 6:
 			case 7:
-			case 0:
+			case 0:break;
 		}
 		
 	}
