@@ -77,7 +77,7 @@ public class DatosPelicula {
 			ConectarBD con=new ConectarBD();
 			co=con.conectarBD("MovieFlix");
 			try {
-				PreparedStatement pt= co.prepareStatement("INSERT INTO pelicula (nombre_pelicula,anyo_estreno,id_categoria) VALUES ( "+pelicula.getId()+","+pelicula.getNombre()+","+pelicula.getAnyoEstreno()+");");
+				PreparedStatement pt= co.prepareStatement("INSERT INTO pelicula (nombre_pelicula,anyo_estreno,id_categoria) VALUES ( '"+pelicula.getNombre()+"',"+pelicula.getAnyoEstreno()+","+pelicula.getCategoria().getId()+");");
 				pt.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
