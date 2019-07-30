@@ -221,8 +221,24 @@ public class DatosCliente {
 				
 		}
 	
-	public void bajaCliente(String nombre) {
-		if(obtenerCliente(nombre))
+	public void bajaCliente(Cliente cliente) {
+		if(obtenerCliente(cliente.getNombreCliente())!=null) {
+			
+			try(Connection co=new ConectarBD().conectarBD("moviflix")) {
+				PreparedStatement pt= co.prepareStatement("DELETE FROM cliente  ( '"+cliente.getNombreCliente()+"','"+cliente.getFechaNacimiento()+"','"+cliente.getCiudad()+"');");
+				System.out.println(pt);
+				pt.executeUpdate();
+				cliente = obtenerCliente(cliente.getNombreCliente());
+				for(int i=1; i<7; i++) {
+					Categoria categoria = new Categoria();
+					categoria.setId(i);
+					this.asignarCatalogoCliente(cliente, categoria);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+				
+		}
 	}
 	
 	

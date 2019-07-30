@@ -29,10 +29,11 @@ public class PedirCliente {
 	
 		System.out.println("Nombre usuario: ");
 		String nombre=new Scanner(System.in).nextLine();
+		
 		System.out.println("Fecha nacimineto: ");
 		LocalDate ld= pideFecha();
-		System.out.println("Ciudad de residencia: ");
 		
+		System.out.println("Ciudad de residencia: ");
 		String ciudad=new Scanner(System.in).nextLine();
 		
 		return new Cliente(nombre,ld, ciudad);
