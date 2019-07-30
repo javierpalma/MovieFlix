@@ -166,6 +166,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		
 		if(dc.obtenerCliente(c.getNombreCliente()) == null) {
 			//llamar al altarCliente de la clase DatosCliente
+			dc.altaCliente(c);
 		}else {
 			System.out.println("Ese cliente ya existe");
 		}
