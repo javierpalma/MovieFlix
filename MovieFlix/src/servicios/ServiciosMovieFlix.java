@@ -52,7 +52,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	}
 
 	@Override
-	public void listar() {
+	public void listarPeliculas() {
 		GenerarInforme f= new GenerarInforme();
 		ArrayList<Pelicula> peliculas = f.listarPeliculas();
 		for (Pelicula pelicula : peliculas) {
@@ -62,23 +62,51 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	@Override
 	public void arrancarAplicacion() {
-		int opcion;
+		int opcion, opcion2;
 		do {
 		Menu.mostrarMenu();
 		opcion=new Scanner(System.in).nextInt();
 		
 			switch(opcion) {
-				case 1: this.altaPelicula();break;
-				case 2:	this.bajaPelicula();break;
-				case 3: this.modificarPelicula();break;
+				case 1: this.altaPelicula();
+					break;
+				case 2:	this.bajaPelicula();
+					break;
+				case 3: this.modificarPelicula();
+					break;
 				//case 4:	this.altaCliente();break;
 				//case 5:	this.bajaCliente(); break;
 				//case 6:	this.modificarCliente();break;
-				case 7: this.listar();break;
+				case 7: do{
+						Menu.listarInformes();
+						opcion2= new Scanner(System.in).nextInt();
+						switch (opcion2) {
+						case 1:
+							this.listarPeliculas();
+							break;
+						case 2:
+							
+							break;
+						case 3:
+							
+							break;
+						case 4:
+							
+							break;
+						case 5:
+							
+							break;
+						case 0:
+							break;
+	
+						default:
+							break;
+						}
+					}while(opcion2!=0);
+					break;
 				case 0: break;
 			}
 		}while(opcion!=0);
-		
 	}
 	
 	

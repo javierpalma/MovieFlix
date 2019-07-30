@@ -10,7 +10,7 @@ public interface I_ServiciosMovieFlix {
 	public void altaPelicula();
 	public void bajaPelicula();
 	public boolean modificarPelicula();
-	public void listar();
+	public void listarPeliculas();
 	public void arrancarAplicacion();
 	
 	//Sprint2
