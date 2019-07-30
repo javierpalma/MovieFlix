@@ -130,9 +130,28 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		
 	}
 
+	/**
+	 * @author Jose Miguel
+	 */
+	//Método que realiza el alta de un usuario comprobando si ya existía previamente para no sobreescribirlo
+	//Hay que realizar una comprobación <-------------------------------------------------------------------
 	@Override
 	public void altaCliente() {
-		// TODO Auto-generated method stub
+		
+		
+		DatosCliente dc = new DatosCliente();
+		PedirCliente pc = new PedirCliente();
+		Cliente c = new Cliente();
+		
+		c = pc.pideCliente();
+		String nombreCliente = c.getNombreCliente();
+		//dc.obtenerCliente(c.getNombreCliente());
+		
+		if(dc.obtenerCliente(c.getNombreCliente()) == null) {
+			//llamar al altarCliente de la clase DatosCliente
+		}else {
+			System.out.println("Ese cliente ya existe");
+		}
 		
 	}
 	
