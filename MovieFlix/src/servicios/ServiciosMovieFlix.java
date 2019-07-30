@@ -182,7 +182,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	
 	@Override
 	public void bajaCliente() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	

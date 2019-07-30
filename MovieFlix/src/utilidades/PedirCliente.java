@@ -10,23 +10,39 @@ import org.apache.logging.log4j.Logger;
 
 import beans.Cliente;
 
+/**
+ * 
+ * @author Vladimir Juan
+ *
+ */
 public class PedirCliente {
 	
 	private static Logger logger = LogManager.getLogger();
 	private static int anio, mes, dia;
 	
+	/**
+	 * 
+	 * @return Cliente
+	 */
+	@SuppressWarnings("resource")
 	public static Cliente pideCliente() {
 	
 		System.out.println("Nombre usuario: ");
 		String nombre=new Scanner(System.in).nextLine();
 		System.out.println("Fecha nacimineto: ");
 		LocalDate ld= pideFecha();
-		System.out.println("Ciudad: ");
+		System.out.println("Ciudad de residencia: ");
+		
 		String ciudad=new Scanner(System.in).nextLine();
 		
 		return new Cliente(nombre,ld, ciudad);
 	}
 	
+	@SuppressWarnings("resource")
+	/**
+	 *
+	 * @return localDate
+	 */
 	private static LocalDate pideFecha() {
 		try {
 			

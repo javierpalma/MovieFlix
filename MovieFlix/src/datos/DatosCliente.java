@@ -49,7 +49,7 @@ public class DatosCliente {
 	
 	/**
 	 * 
-	 * @return
+	 * @return cliente
 	 */
 
 	public Cliente getCliente() {
@@ -220,5 +220,10 @@ public class DatosCliente {
 			}
 				
 		}
-
+	
+	public void bajaCliente(String nombre) {
+		if(obtenerCliente(nombre))
+	}
+	
+	
 }
