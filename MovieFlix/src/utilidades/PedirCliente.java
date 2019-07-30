@@ -8,20 +8,23 @@ import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import beans.Cliente;
+
 public class PedirCliente {
 	
 	private static Logger logger = LogManager.getLogger();
 	private static int anio, mes, dia;
 	
-	public static void pedirUsuario() {
-		System.out.println("Id usuario: ");
-		int id=new Scanner(System.in).nextInt();
+	public static Cliente pedirCliente() {
+	
 		System.out.println("Nombre usuario: ");
 		String nombre=new Scanner(System.in).nextLine();
 		System.out.println("Fecha nacimineto: ");
 		LocalDate ld= pideFecha();
+		System.out.println("Ciudad: ");
+		String ciudad=new Scanner(System.in).nextLine();
 		
-		
+		return new Cliente(nombre,ld, ciudad);
 	}
 	
 	private static LocalDate pideFecha() {
