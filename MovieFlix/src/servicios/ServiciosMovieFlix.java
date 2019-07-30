@@ -39,16 +39,16 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	public boolean modificarPelicula() {
 		int id;
 		DatosPelicula dp = new DatosPelicula();
-		PedirDatos pd = new PedirDatos();
+		//PedirDatos pd = new PedirDatos(); //Vladimir lo ha quitado, es un metodo estatico, podemos acceder directamente.
 		Pelicula p1 = new Pelicula();
 		Pelicula p2 = new Pelicula();
 		
-		p1 = pd.pidePelicula();
+		p1 = PedirDatos.pidePelicula();
 				
 		id = dp.obtenerPelicula(p1.getNombre());
 		
 		System.out.println("-- TOCA MODIFICAR LA PELÍCULA, INTRODUCE LOS NUEVOS DATOS");
-		p2 = pd.pidePelicula();
+		p2 = PedirDatos.pidePelicula();
 		p2.setId(id);
 		
 		dp.modificaPelicula(p2);
