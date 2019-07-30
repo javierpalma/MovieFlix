@@ -2,6 +2,7 @@ package datos;
 
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.sql.ResultSet;
@@ -17,6 +18,7 @@ import beans.Categoria;
 import beans.Cliente;
 import beans.Pelicula;
 import servicios.ConectarBD;
+import utilidades.PedirCategoria;
 
 /**
  * 
@@ -188,6 +190,30 @@ public class DatosCliente {
 			logger.info("No se puede insertar");
 		}
 		
+	}
+	
+	public void altaCliente(Cliente cliente) {
+		
+		if(obtenerCliente(cliente.getNombreCliente())!=null) {
+				System.out.println("No se puede añadir, usuario existente");
+		}
+		else {
+			Connection co=null;
+			ConectarBD con=new ConectarBD();
+			co=con.conectarBD("MovieFlix");
+			try {
+				PreparedStatement pt= co.prepareStatement("INSERT INTO cliente (nombre_cliente,fecha_nacimiento,ciudad) VALUES ( '"+cliente.getNombreCliente()+"',"+cliente.getFechaNacimiento()+","+cliente.getCiudad()+");");
+				pt.executeUpdate();
+				for(int i=1; i<7; i++) {
+					Categoria categoria = new Categoria();
+					categoria.setId(i);
+					this.asignarCatalogoCliente(cliente, categoria);
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+				
+		}
 	}
 
 }
