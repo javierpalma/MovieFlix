@@ -20,33 +20,32 @@ public class GenerarInforme {
 	 * @author Jose Miguel
 	 * @return list
 	 */
-	public List<Pelicula> listarPeliculas(int id){
+	public ArrayList<Pelicula> listarPeliculas(){
 		
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
 		ResultSet rs=null;
 		Logger logger = LogManager.getLogger(); 
-		int idPelicula = id;
 		
-		String sql="SELECT PELICULA.NOMBRE_PELICULA, PELICULA.ANYO_ESTRENO, CATEGORIA.NOMBRE FROM PELICULA, CATEGORIA WHERE PELICULA.ID_CATEGORIA = CATEGORIA.ID_CATEGORIA AND PELICULA.ID_PELICULA =" + idPelicula +";";
+		String sql="SELECT PELICULA.NOMBRE_PELICULA, PELICULA.ANYO_ESTRENO, CATEGORIA.NOMBRE FROM PELICULA, CATEGORIA WHERE PELICULA.ID_CATEGORIA = CATEGORIA.ID_CATEGORIA;";
 		System.out.println(sql);
 		ArrayList<Pelicula> listaPelicula= new ArrayList<Pelicula>();
-		Pelicula p = new Pelicula();
-		Categoria c = new Categoria();
 		
 		try {			
 			co= conect.conectarBD("movieflix") ;
 			stm=co.createStatement();
 			rs=stm.executeQuery(sql);
 			while (rs.next()) {
-		
+	
+				Pelicula p = new Pelicula();
+				Categoria c = new Categoria();
 				p.setNombre(rs.getString(1));
 				p.setAnyoEstreno(rs.getInt(2));
 				c.setNombre(rs.getString(3));
 				p.setCategoria(c);
 				listaPelicula.add(p);
-				System.out.println(p);
+				//System.out.println(p);
 				
 			}
 			stm.close();

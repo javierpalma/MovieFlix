@@ -2,6 +2,7 @@ package servicios;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 import datos.GenerarInforme;
 import beans.Categoria;
@@ -49,13 +50,18 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
+	
+	//Método que imprime una lista de películas de la bd por medio de una llamada a otro método en la capa datos
+	/**
+	 * @author Jose Miguel
+	 */
 	@Override
-	public List<Pelicula> listar() {
+	public void listar() {
 		GenerarInforme gi = new GenerarInforme();
-		gi.listarPeliculas(DatosPelicula.obtenerPelicula("intocable"));
-		
-		return null;
+		ArrayList<Pelicula> peliculas = gi.listarPeliculas();
+		for (Pelicula pelicula : peliculas) {
+			System.out.println(pelicula);
+		}
 	}
 
 	@Override
