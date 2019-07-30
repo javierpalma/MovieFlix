@@ -73,11 +73,11 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 			case 1: this.altaPelicula();break;
 			case 2:	this.bajaPelicula();break;
 			case 3: this.modificarPelicula(PedirDatos.pidePelicula());break;
-			case 4:	
-			case 5:
-			case 6:
-			case 7:
-			case 0:break;s
+			case 4:	this.altaCliente();break;
+			case 5:	this.bajaCliente(); break;
+			case 6:	this.modificarCliente();break;
+			case 7: this.listar();break;
+			case 0: break;
 		}
 		
 	}
