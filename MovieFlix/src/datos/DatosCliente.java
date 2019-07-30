@@ -77,7 +77,7 @@ public class DatosCliente {
         java.sql.Statement stm= null;
         ResultSet rs=null;
         
-        String sql="SELECT * FROM CLIENTE WHERE NOMBRE CLIENTE=NOMBRE";
+        String sql="SELECT * FROM CLIENTE WHERE NOMBRE_CLIENTE='"+nombre+"';";
         Cliente c = new Cliente();
         
         
@@ -198,7 +198,8 @@ public class DatosCliente {
 			ConectarBD con=new ConectarBD();
 			co=con.conectarBD("MovieFlix");
 			try {
-				PreparedStatement pt= co.prepareStatement("INSERT INTO cliente (nombre_cliente,fecha_nacimiento,ciudad) VALUES ( '"+cliente.getNombreCliente()+"',"+cliente.getFechaNacimiento()+","+cliente.getCiudad()+");");
+				PreparedStatement pt= co.prepareStatement("INSERT INTO cliente (nombre_cliente,fecha_nacimiento,ciudad) VALUES ( '"+cliente.getNombreCliente()+"','"+cliente.getFechaNacimiento()+"','"+cliente.getCiudad()+"');");
+				System.out.println(pt);
 				pt.executeUpdate();
 				for(int i=1; i<7; i++) {
 					Categoria categoria = new Categoria();
