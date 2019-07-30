@@ -28,6 +28,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	/**
 	 * @author Jose Miguel
 	 */
+	//Método que recoge por teclado la pelicula, se busca si existe, se recoge el id y se modificara en base a su id
 	@Override
 	public boolean modificarPelicula() {
 		int id;
@@ -40,6 +41,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 				
 		id = dp.obtenerPelicula(p1.getNombre());
 		
+		System.out.println("-- TOCA MODIFICAR LA PELÍCULA, INTRODUCE LOS NUEVOS DATOS");
 		p2 = pd.pidePelicula();
 		p2.setId(id);
 		
