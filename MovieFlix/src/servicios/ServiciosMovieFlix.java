@@ -96,10 +96,10 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 							this.listarPeliculaPorCategoria();
 							break;
 						case 3:
-							
+							this.listarPeliculaPorValoracion();
 							break;
 						case 4:
-							
+							this.listarPeliculaCliente();
 							break;
 						case 5:
 							
@@ -119,10 +119,17 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	
 	@Override
 	public void listarPeliculaCliente() {
-		// TODO Auto-generated method stub
-		
+		GenerarInforme f= new GenerarInforme();
+		Cliente cliente = new Cliente();
+		cliente = PedirCliente.pideCliente();
+		cliente = new DatosCliente().obtenerCliente(cliente.getNombreCliente());
+		System.out.println(cliente);
+		ArrayList<Pelicula> peliculas = f.listarPeliculasCliente(cliente);
+		for (Pelicula pelicula : peliculas) {
+			System.out.println(pelicula.getNombre()+"-"+pelicula.getAnyoEstreno()+"-"+pelicula.getCategoria().getNombre());
+		}
 	}
-
+		
 	@Override
 	public void listarPeliculaPorCategoria() {
 		GenerarInforme f= new GenerarInforme();
