@@ -1,5 +1,6 @@
 package servicios;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -51,9 +52,12 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	}
 
 	@Override
-	public List<Pelicula> listar() {
+	public void listar() {
 		GenerarInforme f= new GenerarInforme();
-		return f.listarPeliculas();
+		ArrayList<Pelicula> peliculas = f.listarPeliculas();
+		for (Pelicula pelicula : peliculas) {
+			System.out.println(pelicula.getNombre()+"-"+pelicula.getAnyoEstreno()+"-"+pelicula.getCategoria().getNombre());
+		}
 	}
 
 	@Override
