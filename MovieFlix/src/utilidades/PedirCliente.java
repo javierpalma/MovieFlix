@@ -8,7 +8,7 @@ import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class PedirUsuario {
+public class PedirCliente {
 	
 	private static Logger logger = LogManager.getLogger();
 	private static int anio, mes, dia;
@@ -19,12 +19,12 @@ public class PedirUsuario {
 		System.out.println("Nombre usuario: ");
 		String nombre=new Scanner(System.in).nextLine();
 		System.out.println("Fecha nacimineto: ");
-		LocalDate ld= fecha();
+		LocalDate ld= pideFecha();
 		
 		
 	}
 	
-	private static LocalDate fecha() {
+	private static LocalDate pideFecha() {
 		try {
 			
 			System.out.println("Año: ");
@@ -39,11 +39,11 @@ public class PedirUsuario {
 		catch(InputMismatchException ime) {
 			logger.info("El año, mes y dia deben ser numericos");
 			 logger.error("Año, mes o dia incorrectos.");
-			 fecha();
+			 pideFecha();
 		}
 		catch(DateTimeException dte) {
 			logger.error(dte.getMessage());
-			fecha();
+			pideFecha();
 		}
 		
 		return LocalDate.of(anio, mes, dia);
