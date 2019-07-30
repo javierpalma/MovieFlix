@@ -1,6 +1,8 @@
 package datos;
 
 import java.sql.Connection;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Logger;
@@ -79,15 +81,16 @@ public class DatosCliente {
 			
 			while (rs.next()) {
 				
-				c.setIdCliente(rs.getInt());
-				c.setNombreCliente(rs.getString());
-				c.setFechaNacimiento(rs.getLocalDate());
-				c.setCiudad(rs.getString());
+				c.setIdCliente(rs.getInt(1));
+				c.setNombreCliente(rs.getString(2));
+				LocalDate fecha = rs.getDate(3).toLocalDate();
+				c.setFechaNacimiento(fecha);
+				c.setCiudad(rs.getString(4));
 				
 		
 				if(c.getNombreCliente().trim().equalsIgnoreCase(nombre)) {
 					System.out.println("El cliente existe");
-					return c.getString();
+					return c;
 				}
 				else {
 					flag= -1;
