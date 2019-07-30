@@ -44,7 +44,16 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	@Override
 	public boolean modificarPelicula(Pelicula pelicula) {
-		DatosPelicula.modificaPelicula(pelicula);
+		int id;
+		DatosPelicula dp = new DatosPelicula();
+		PedirDatos pd = new PedirDatos();
+		Pelicula p1 = new Pelicula();
+		
+		id = dp.obtenerPelicula(p1.getNombre());
+		p1.setId(id);
+		p1 = pd.pidePelicula();
+		
+		//actualizar pelicula
 		return false;
 	}
 
