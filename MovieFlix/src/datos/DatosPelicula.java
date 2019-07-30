@@ -129,7 +129,7 @@ public class DatosPelicula {
 	 * @param pelicula
 	 * @return
 	 */
-	public static int obtenerPelicula(String nombre) {
+	public int obtenerPelicula(String nombre) {
 		int flag = -1;
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
@@ -178,7 +178,7 @@ public class DatosPelicula {
 		return p.getId();
 	}
 	
-	public static Boolean modificaPelicula(Pelicula pelicula) {
+	public Boolean modificaPelicula(Pelicula pelicula) {
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
