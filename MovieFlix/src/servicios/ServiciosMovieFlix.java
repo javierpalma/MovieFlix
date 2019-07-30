@@ -68,7 +68,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 			case 5:
 			case 6:
 			case 7:
-			case 0:break;
+			case 0:break;s
 		}
 		
 	}
