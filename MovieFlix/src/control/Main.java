@@ -24,7 +24,9 @@ public class Main {
 		
 		//GenerarInforme gi = new GenerarInforme();
 		//gi.listarPeliculas();
-		sm.listar();
+		sm.modificarPelicula();
+		
+		
 	}
 	
 	

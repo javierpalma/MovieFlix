@@ -177,21 +177,26 @@ public class DatosPelicula {
 		
 		return p.getId();
 	}
-	
+	/**
+	 * @author Jose Miguel
+	 * @param pelicula
+	 * @return
+	 */
 	public Boolean modificaPelicula(Pelicula pelicula) {
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
-		ResultSet rs=null;		
+		int rs;		
 	
 
 		boolean actualizar=false;
 				
-		String sql="UPDATE PELICULA SET NOMBRE_PELICULA ='"+ pelicula.getNombre()+"', ANYO_ESTRENO ='"+ pelicula.getAnyoEstreno()+"', ID_CATEGORIA ='"+ pelicula.getCategoria()+"'" +" WHERE ID_PELICULA ="+pelicula.getId();
+		String sql="UPDATE PELICULA SET NOMBRE_PELICULA ='"+ pelicula.getNombre()+"', ANYO_ESTRENO ='"+ pelicula.getAnyoEstreno()+"', ID_CATEGORIA ='"+ pelicula.getCategoria().getId()+"'" +" WHERE ID_PELICULA ="+pelicula.getId();
+		System.out.println(sql);
 		try {
 			co= conect.conectarBD("movieflix") ;
 			stm=co.createStatement();
-			rs=stm.executeQuery(sql);
+			rs= stm.executeUpdate(sql);
 			
 			actualizar=true;
 			
