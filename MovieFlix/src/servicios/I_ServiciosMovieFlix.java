@@ -18,4 +18,5 @@ public interface I_ServiciosMovieFlix {
 	public void listarPeliculaCliente();
 	public void listarPeliculaNoVistaCliente();
 	public void listarPeliculaPorValoracion();
+	public boolean modificarCliente();
 }

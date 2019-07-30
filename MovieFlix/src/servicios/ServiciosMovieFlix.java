@@ -5,10 +5,13 @@ import java.util.List;
 import java.util.Scanner;
 
 import beans.Categoria;
+import beans.Cliente;
 import beans.Pelicula;
+import datos.DatosCliente;
 import datos.DatosPelicula;
 import datos.GenerarInforme;
 import utilidades.Menu;
+import utilidades.PedirCliente;
 import utilidades.PedirDatos;
 
 public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
@@ -126,11 +129,32 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	/**
+	 * @author Jose Miguel
+	 */
+	//Metodo que introduce por teclado una modificación del cliente por medio de su ID y comprueba que existe el cliente para actualizarlo.
 	@Override
-	public boolean modificaCliente() {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean modificarCliente() {
+		
+		DatosCliente dc = new DatosCliente();
+		PedirCliente pc = new PedirCliente();
+		Cliente c1 = new Cliente();
+		Cliente c2 = new Cliente();
+		Cliente c3 = new Cliente();
+		
+		c1 = pc.pideCliente();
+		
+		c3 = dc.obtenerCliente(c1.getNombreCliente());
+		c3.getIdCliente();
+		
+		System.out.println("-- TOCA MODIFICAR EL CLIENTE, INTRODUCE LOS NUEVOS DATOS");
+		c2 = pc.pideCliente();
+		c2.setIdCliente(c3.getIdCliente());
+		
+		dc.modificaCliente(c2);
+		
+	 return false;	
 	}
 	
 	
