@@ -126,6 +126,12 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public boolean modificaCliente() {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 	
 
