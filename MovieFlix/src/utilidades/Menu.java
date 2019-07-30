@@ -22,7 +22,4 @@ public class Menu {
 		System.out.println("5 - Marcar Pelicula cliente como vista");		
 		System.out.println("0 - Salirr");
 	}
-
-
-
 }
