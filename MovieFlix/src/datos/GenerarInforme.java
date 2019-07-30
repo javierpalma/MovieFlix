@@ -59,6 +59,45 @@ public class GenerarInforme {
 
 	}
 	
+	public ArrayList<Pelicula> listarPeliculaPorCategoria(Categoria categoria){
+		Connection co =null;
+		ConectarBD conect = new ConectarBD();
+		java.sql.Statement stm= null;
+		ResultSet rs=null;
+		Logger logger = LogManager.getLogger(); 
+		
+		String sql="SELECT P.ID_PELICULA, P.nombre_pelicula, p.anyo_estreno, p.id_categoria, c.nombre FROM PELICULA AS P, CATEGORIA AS C WHERE P.ID_CATEGORIA = C.ID_CATEGORIA AND P.id_categoria="+categoria.getId()+";";
+		ArrayList<Pelicula> listaPelicula= new ArrayList<Pelicula>();
+		
+		try {			
+			co= conect.conectarBD("movieflix") ;
+			stm=co.createStatement();
+			rs=stm.executeQuery(sql);
+			while (rs.next()) {
+	
+				Pelicula p = new Pelicula();
+				Categoria c = new Categoria();
+				p.setId(rs.getInt(1));
+				p.setNombre(rs.getString(2));
+				p.setAnyoEstreno(rs.getInt(3));
+				c.setId(rs.getInt(4));
+				c.setNombre(rs.getString(5));
+				p.setCategoria(c);
+				listaPelicula.add(p);
+				//System.out.println(p);
+				
+			}
+			stm.close();
+			rs.close();
+			co.close();
+		} catch (SQLException e) {
+			System.out.println("Error: Clase GenerarInforme, método ListarPelicula");
+			logger.info(e.getMessage());
+		}
+		
+		return listaPelicula;
+	}
+	
 	
 	
 	
