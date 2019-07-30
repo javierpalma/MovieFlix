@@ -12,7 +12,6 @@ public class Menu {
 		System.out.println("7. Informes");
 		System.out.println("0. Salir");
 	}
-<<<<<<< HEAD
 	
 	public static void listarInformes() {
 		
@@ -23,7 +22,7 @@ public class Menu {
 		System.out.println("5 - Marcar Pelicula cliente como vista");		
 		System.out.println("0 - Salirr");
 	}
-=======
->>>>>>> c20230cdcd70a18faa54085ecabd0e57b547d87b
+
+
 
 }
