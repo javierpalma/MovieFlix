@@ -154,15 +154,15 @@ public class DatosCliente {
 		ConectarBD conect=new ConectarBD();
 		Logger logger=LogManager.getLogger();
 		ArrayList<Pelicula> lista= new ArrayList();
-		
+		lista = new GenerarInforme().listarPeliculaPorCategoria(categoria);
 		//String sql="INSERT INTO CLIENTE_PELICULA (ID_CLIENTE, ID_PELICULA, VISTA, VALORACION) VALUES ('"+cliente.getId()+"', "+pelicula.getId()+", false, NULL);";
 		
 		try {
 			co=conect.conectarBD("movieFlix");
 			java.sql.Statement stm=co.createStatement();
 	
-			for(Object elemento : lista) {
-				String sql="INSERT INTO CLIENTE_PELICULA (ID_CLIENTE, ID_PELICULA, VISTA, VALORACION) VALUES ('"+cliente.getIdCliente()+"', "+dp.getPelicula().getId()+", false, NULL);";
+			for(Pelicula pelicula : lista) {
+				String sql="INSERT INTO CLIENTE_PELICULA (ID_CLIENTE, ID_PELICULA, VISTA, VALORACION) VALUES ('"+cliente.getIdCliente()+"', "+pelicula.getId()+", false, NULL);";
 				stm.executeQuery(sql);
 			}
 		}catch(SQLException e) {
