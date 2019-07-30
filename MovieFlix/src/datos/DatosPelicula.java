@@ -8,9 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import java.sql.Statement;
 import beans.Pelicula;
-import control.E05_select;
 import servicios.ConectarBD;
 import beans.Categoria;
 
@@ -130,7 +130,7 @@ public class DatosPelicula {
 	 * @return
 	 */
 	public static int obtenerPelicula(String nombre) {
-		Boolean flag = false;
+		int flag = -1;
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
@@ -156,13 +156,13 @@ public class DatosPelicula {
 				//listaPelicula.add(p);
 				//System.out.println(p.getNombre().toLowerCase()==pelicula.getNombre().toLowerCase());
 				//System.out.println(nom.compareTo(nombre));
-				
+
 				if(p.getNombre().trim().equalsIgnoreCase(nombre)) {
 					System.out.println("La película está disponible");
 					return p.getId();
 				}
 				else {
-					return -1;
+					flag= -1;
 				}
 			}
 			stm.close();

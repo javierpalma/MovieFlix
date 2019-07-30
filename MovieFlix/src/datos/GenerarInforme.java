@@ -20,16 +20,16 @@ public class GenerarInforme {
 	 * @author Jose Miguel
 	 * @return list
 	 */
-	public List<Pelicula> listarPeliculas(){
+	public List<Pelicula> listarPeliculas(int id){
 		
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
 		ResultSet rs=null;
 		Logger logger = LogManager.getLogger(); 
-
+		int idPelicula = id;
 		
-		String sql="SELECT PELICULA.NOMBRE_PELICULA, PELICULA.ANYO_ESTRENO, CATEGORIA.NOMBRE FROM PELICULA, CATEGORIA WHERE PELICULA.ID_CATEGORIA = CATEGORIA.ID_CATEGORIA;";
+		String sql="SELECT PELICULA.NOMBRE_PELICULA, PELICULA.ANYO_ESTRENO, CATEGORIA.NOMBRE FROM PELICULA, CATEGORIA WHERE PELICULA.ID_CATEGORIA = CATEGORIA.ID_CATEGORIA AND PELICULA.ID_PELICULA =" + idPelicula +";";
 		System.out.println(sql);
 		ArrayList<Pelicula> listaPelicula= new ArrayList<Pelicula>();
 		Pelicula p = new Pelicula();

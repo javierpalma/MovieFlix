@@ -3,10 +3,14 @@ package servicios;
 import java.util.List;
 import java.util.Scanner;
 
+import datos.GenerarInforme;
 import beans.Categoria;
 import beans.Pelicula;
 import datos.DatosPelicula;
+import datos.GenerarInforme;
 import utilidades.PedirDatos;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
@@ -48,7 +52,9 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	@Override
 	public List<Pelicula> listar() {
-		// TODO Auto-generated method stub
+		GenerarInforme gi = new GenerarInforme();
+		gi.listarPeliculas(DatosPelicula.obtenerPelicula("intocable"));
+		
 		return null;
 	}
 
