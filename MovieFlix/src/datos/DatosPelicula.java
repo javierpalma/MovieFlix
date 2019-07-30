@@ -67,7 +67,7 @@ public class DatosPelicula {
 	 * @param pelicula
 	 * Damos de alta una pelicula
 	 */
-	//revisar
+
 	public void altaPelicula(Pelicula pelicula) {
 		if(obtenerPelicula(pelicula.getNombre())!=-1) {
 			System.out.println("No se puede añadir, ya se añadio");
@@ -77,7 +77,7 @@ public class DatosPelicula {
 			ConectarBD con=new ConectarBD();
 			co=con.conectarBD("MovieFlix");
 			try {
-				PreparedStatement pt= co.prepareStatement("INSERT INTO pelicula (nombre_pelicula,anyo_estreno,id_categoria) VALUES ( pelicula.getID()+","+pelicula.getNombre()+","+pelicula.getAnyoEstreno()+)");
+				PreparedStatement pt= co.prepareStatement("INSERT INTO pelicula (nombre_pelicula,anyo_estreno,id_categoria) VALUES ( "+pelicula.getId()+","+pelicula.getNombre()+","+pelicula.getAnyoEstreno()+");");
 				pt.executeUpdate();
 			} catch (SQLException e) {
 				e.printStackTrace();
