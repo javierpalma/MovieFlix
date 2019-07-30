@@ -63,7 +63,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		switch(opcion) {
 			case 1: this.altaPelicula();break;
 			case 2:	this.bajaPelicula();break;
-			case 3: this.modificarPelicula();break;
+			case 3: this.modificarPelicula(PedirDatos.pidePelicula());break;
 			case 4:	
 			case 5:
 			case 6:
