@@ -69,7 +69,7 @@ public class DatosPelicula {
 	 */
 	//revisar
 	public void altaPelicula(Pelicula pelicula) {
-		if(obtenerPelicula()==true) {
+		if(obtenerPelicula(pelicula.getNombre())!=-1) {
 			System.out.println("No se puede añadir, ya se añadio");
 		}
 		else {
