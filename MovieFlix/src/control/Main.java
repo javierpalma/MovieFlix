@@ -18,12 +18,13 @@ public class Main {
 		
 		//Categoria c1 = new Categoria(2, "romantica");
 		//Pelicula p1 = new Pelicula(1,"", 1997, c1);
-		//DatosPelicula.obtenerPelicula("Intocable");
-		//ServiciosMovieFlix sm = new ServiciosMovieFlix();
+		//DatosPelicula.obtenerPelicula("La vida es bella");
+		ServiciosMovieFlix sm = new ServiciosMovieFlix();
 		//sm.altaPelicula();
 		
-		GenerarInforme gi = new GenerarInforme();
-		gi.listarPeliculas();
+		//GenerarInforme gi = new GenerarInforme();
+		//gi.listarPeliculas();
+		sm.listar();
 	}
 	
 	

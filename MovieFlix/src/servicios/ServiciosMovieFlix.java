@@ -42,19 +42,19 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	@Override
 	public boolean modificarPelicula(Pelicula pelicula) {
-		// TODO Auto-generated method stub
+		DatosPelicula.modificaPelicula(pelicula);
 		return false;
 	}
 
 	@Override
 	public List<Pelicula> listar() {
-		// TODO Auto-generated method stub
+	
 		return null;
 	}
 
 	@Override
 	public void arrancarAplicacion() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	
