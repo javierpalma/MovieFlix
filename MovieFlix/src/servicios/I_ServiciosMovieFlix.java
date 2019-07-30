@@ -12,4 +12,10 @@ public interface I_ServiciosMovieFlix {
 	public boolean modificarPelicula();
 	public void listar();
 	public void arrancarAplicacion();
+	
+	//Sprint2
+	
+	public void listarPeliculaCliente();
+	public void listarPeliculaNoVistaCliente();
+	public void listarPeliculaPorValoracion();
 }
