@@ -130,6 +130,18 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		
 	}
 	
+	@Override
+	public void altaCliente() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void bajaCliente() {
+		// TODO Auto-generated method stub
+		
+	}
+	
 	/**
 	 * @author Jose Miguel
 	 */
@@ -156,7 +168,6 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		
 	 return false;	
 	}
-	
-	
+
 
 }
