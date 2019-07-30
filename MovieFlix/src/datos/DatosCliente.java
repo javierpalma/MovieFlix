@@ -219,7 +219,7 @@ public class DatosCliente {
 			
 			try(Connection co=new ConectarBD().conectarBD("movieflix")) {
 				String sql="DELETE FROM CLIENTE WHERE NOMBRE_CLIENTE='"+nombre+"';";
-				PreparedStatement pt= co.prepareStatement(sql);//'"+cliente.getNombreCliente()+"');"); /*+"','"+cliente.getFechaNacimiento()+"','"+cliente.getCiudad()+"');");*/
+				PreparedStatement pt= co.prepareStatement(sql);
 				pt.executeUpdate();
 				System.out.println("Borrado usuario con exito.");
 			} catch (SQLException e) {
