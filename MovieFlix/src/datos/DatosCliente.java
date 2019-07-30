@@ -111,10 +111,17 @@ public class DatosCliente {
         return null;
     }
 	
+	/**
+	 * @author Jose Miguel	
+	 * @param cliente
+	 * @return
+	 */
+	//Método que modifica la tabla clientes por medio de un objeto como parámetro en base a su ID
 	public Boolean modificaCliente(Cliente cliente) {
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
+		Logger logger = LogManager.getLogger(); 
 		int rs;		
 	
 
@@ -130,8 +137,8 @@ public class DatosCliente {
 			actualizar=true;
 			
 		} catch (SQLException e) {
-			System.out.println("Error: Clase DatosPelicula, método actualizar");
-			e.printStackTrace();
+			System.out.println("Error: Clase DatosCLientes, método modificaCliente");
+			logger.info(e.getMessage());
 		}
 		
 		return actualizar;
