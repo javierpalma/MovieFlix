@@ -10,7 +10,9 @@ import beans.Pelicula;
 import datos.DatosCliente;
 import datos.DatosPelicula;
 import datos.GenerarInforme;
+import datos.GestionCategoria;
 import utilidades.Menu;
+import utilidades.PedirCategoria;
 import utilidades.PedirCliente;
 import utilidades.PedirDatos;
 
@@ -124,6 +126,9 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	@Override
 	public void listarPeliculaPorCategoria() {
 		GenerarInforme f= new GenerarInforme();
+		Categoria categoria = new Categoria();
+		categoria.setNombre(PedirCategoria.pideCategoria());
+		categoria.setId(new GestionCategoria().obtenerIdCategoria(categoria.getNombre()));
 		ArrayList<Pelicula> peliculas = f.listarPeliculaPorCategoria(categoria);
 		for (Pelicula pelicula : peliculas) {
 			System.out.println(pelicula.getNombre()+"-"+pelicula.getAnyoEstreno()+"-"+pelicula.getCategoria().getNombre());
