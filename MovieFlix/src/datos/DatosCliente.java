@@ -194,10 +194,6 @@ public class DatosCliente {
 	
 	public void altaCliente(Cliente cliente) {
 		
-		if(obtenerCliente(cliente.getNombreCliente())!=null) {
-				System.out.println("No se puede añadir, usuario existente");
-		}
-		else {
 			Connection co=null;
 			ConectarBD con=new ConectarBD();
 			co=con.conectarBD("MovieFlix");
@@ -214,6 +210,5 @@ public class DatosCliente {
 			}
 				
 		}
-	}
 
 }
