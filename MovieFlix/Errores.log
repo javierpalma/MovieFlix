@@ -66,3 +66,180 @@
 [ INFO] - DatosCliente:190 2019-07-30 15:09:57 - No se puede insertar
 [DEBUG] - ConectarBD:50 2019-07-30 15:09:57 - Conectando con BD:
 [ INFO] - DatosCliente:190 2019-07-30 15:09:57 - No se puede insertar
+[DEBUG] - ConectarBD:50 2019-07-30 17:36:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:40:24 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:40:24 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:40:24 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:40:24 - No se puede insertar
+[DEBUG] - ConectarBD:50 2019-07-30 17:40:24 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:40:24 - No se puede insertar
+[DEBUG] - ConectarBD:50 2019-07-30 17:40:24 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:40:24 - No se puede insertar
+[DEBUG] - ConectarBD:50 2019-07-30 17:40:24 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:40:24 - No se puede insertar
+[DEBUG] - ConectarBD:50 2019-07-30 17:40:24 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:40:24 - No se puede insertar
+[DEBUG] - ConectarBD:50 2019-07-30 17:40:24 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:40:24 - No se puede insertar
+[DEBUG] - ConectarBD:50 2019-07-30 17:42:17 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:42:17 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:42:17 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:42:17 - No se puede insertar
+[DEBUG] - ConectarBD:50 2019-07-30 17:42:17 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:42:17 - No se puede insertar
+[DEBUG] - ConectarBD:50 2019-07-30 17:42:17 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:42:17 - No se puede insertar
+[DEBUG] - ConectarBD:50 2019-07-30 17:42:17 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:42:17 - No se puede insertar
+[DEBUG] - ConectarBD:50 2019-07-30 17:42:17 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:42:17 - No se puede insertar
+[DEBUG] - ConectarBD:50 2019-07-30 17:42:17 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:42:17 - No se puede insertar
+[DEBUG] - ConectarBD:50 2019-07-30 17:48:55 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:48:55 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:48:55 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:48:55 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:48:55 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:48:55 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:48:55 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:48:55 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:48:55 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:48:55 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:48:55 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:48:55 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:48:55 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:48:55 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[ERROR] - PedirCliente:48 2019-07-30 17:50:13 - 
+Mes o dia incorrecto
+[DEBUG] - ConectarBD:50 2019-07-30 17:50:32 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:50:32 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:50:32 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:50:32 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:50:32 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:50:32 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:50:32 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:50:32 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:50:32 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:50:32 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:50:32 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:50:32 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:50:32 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:50:32 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:51:51 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:51:51 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:51:51 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:51:51 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:51:51 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:51:51 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:51:51 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:51:51 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:51:51 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:51:51 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:51:51 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:51:51 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:51:51 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:51:51 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:54:01 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:54:02 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:54:02 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:54:02 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:54:02 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:54:02 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:54:02 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:54:02 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:54:02 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:54:02 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:54:02 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:54:02 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:54:02 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:54:02 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:55:45 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:55:46 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:55:46 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:55:46 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:55:46 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:55:46 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:55:46 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:55:46 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:55:46 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:55:46 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:55:46 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:55:46 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:55:46 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:55:46 - Conectando con BD:
+[ INFO] - DatosCliente:191 2019-07-30 17:55:46 - No se puede insertar Can not issue data manipulation statements with executeQuery().
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[ INFO] - DatosCliente:172 2019-07-30 17:57:35 - Error: clase DatosClientes, metodo asignarCategoria
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[ INFO] - DatosCliente:172 2019-07-30 17:57:35 - Error: clase DatosClientes, metodo asignarCategoria
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[ INFO] - DatosCliente:172 2019-07-30 17:57:35 - Error: clase DatosClientes, metodo asignarCategoria
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[ INFO] - DatosCliente:172 2019-07-30 17:57:35 - Error: clase DatosClientes, metodo asignarCategoria
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:36 - Conectando con BD:
+[ INFO] - DatosCliente:172 2019-07-30 17:57:36 - Error: clase DatosClientes, metodo asignarCategoria
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:36 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:36 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 17:57:36 - Conectando con BD:
+[ INFO] - DatosCliente:172 2019-07-30 17:57:36 - Error: clase DatosClientes, metodo asignarCategoria
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:35 - Conectando con BD:
+[ INFO] - DatosCliente:172 2019-07-30 18:00:35 - Error: clase DatosClientes, metodo asignarCategoria
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:35 - Conectando con BD:
+[ INFO] - DatosCliente:172 2019-07-30 18:00:35 - Error: clase DatosClientes, metodo asignarCategoria
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:36 - Conectando con BD:
+[ INFO] - DatosCliente:172 2019-07-30 18:00:36 - Error: clase DatosClientes, metodo asignarCategoria
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:36 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:36 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:36 - Conectando con BD:
+[ INFO] - DatosCliente:172 2019-07-30 18:00:36 - Error: clase DatosClientes, metodo asignarCategoria
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:36 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:36 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:36 - Conectando con BD:
+[ INFO] - DatosCliente:172 2019-07-30 18:00:36 - Error: clase DatosClientes, metodo asignarCategoria
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:36 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:36 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:00:36 - Conectando con BD:
+[ INFO] - DatosCliente:172 2019-07-30 18:00:36 - Error: clase DatosClientes, metodo asignarCategoria
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:11 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-30 18:02:12 - Conectando con BD:

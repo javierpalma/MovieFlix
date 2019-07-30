@@ -164,8 +164,8 @@ public class DatosCliente {
 			java.sql.Statement stm=co.createStatement();
 	
 			for(Pelicula pelicula : lista) {
-				String sql="INSERT INTO CLIENTE_PELICULA (ID_CLIENTE, ID_PELICULA, VISTA, VALORACION) VALUES ('"+cliente.getIdCliente()+"', "+pelicula.getId()+", false, NULL);";
-				stm.executeQuery(sql);
+				String sql="INSERT INTO CLIENTE_PELICULA (ID_CLIENTE, ID_PELICULA, VISTA, VALORACION) VALUES ("+cliente.getIdCliente()+", "+pelicula.getId()+", false, NULL);";
+				stm.executeUpdate(sql);
 			}
 		}catch(SQLException e) {
 			logger.info("Error: clase DatosClientes, metodo asignarCategoria");
@@ -176,18 +176,15 @@ public class DatosCliente {
 		Connection co=null;
 		ConectarBD conect= new ConectarBD();
 		Logger logger= LogManager.getLogger();
-		
 		String sql="INSERT INTO cliente_categoria VALUES ("+cliente.getIdCliente() + ","+categoria.getId()+")" ;
-		
 		try {
-			co=conect.conectarBD("movieFlix");
+			co=conect.conectarBD("movieflix");
 			java.sql.Statement stm=co.createStatement();
-			ResultSet rs= stm.executeQuery(sql);
-			
+			int rs= stm.executeUpdate(sql);
 			asignarCategoriaCliente(cliente, categoria);
 			
 		}catch(SQLException e) {
-			logger.info("No se puede insertar");
+			logger.info("No se puede insertar "+e.getMessage());
 		}
 		
 	}
@@ -196,11 +193,12 @@ public class DatosCliente {
 		
 			Connection co=null;
 			ConectarBD con=new ConectarBD();
-			co=con.conectarBD("MovieFlix");
+			co=con.conectarBD("movieflix");
 			try {
 				PreparedStatement pt= co.prepareStatement("INSERT INTO cliente (nombre_cliente,fecha_nacimiento,ciudad) VALUES ( '"+cliente.getNombreCliente()+"','"+cliente.getFechaNacimiento()+"','"+cliente.getCiudad()+"');");
 				System.out.println(pt);
 				pt.executeUpdate();
+				cliente = obtenerCliente(cliente.getNombreCliente());
 				for(int i=1; i<7; i++) {
 					Categoria categoria = new Categoria();
 					categoria.setId(i);
