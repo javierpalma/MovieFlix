@@ -39,6 +39,12 @@ public class Pelicula {
 		this.categoria = categoria;
 	}
 	
+	public Pelicula(String nombre, int anyoEstreno, Categoria categoria) {
+		this.nombre=nombre;
+		this.anyoEstreno=anyoEstreno;
+		this.categoria=categoria;
+	}
+	
 	/**
 	 * 
 	 * @return

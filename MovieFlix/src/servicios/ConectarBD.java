@@ -41,17 +41,21 @@ public class ConectarBD {
 	public Connection conectarBD(String bd) {
 		Connection con = null;
 		this.bd = url+bd+this.dataZone;
+		
+		
+		
 		try {
+			try {
+				Logger log = LogManager.getLogger();
+				log.debug("Conectando con BD:");
+			}catch (Throwable e) {
+				System.out.println(e.getMessage());
+			}
 			con = DriverManager.getConnection(this.bd, user, password);
 			return con;
 		}
 		catch (SQLException ex) {
-			try {
-				Logger log = LogManager.getLogger();
-				log.trace("Error al conectar en BD: "+ex.getMessage());
-			}catch (Throwable e) {
-				System.out.println(e.getMessage());
-			}
+			
 		}
 		return null;
 	} 
@@ -68,6 +72,12 @@ public class ConectarBD {
 		String linea;
 		
 		try {
+			try {
+				Logger log = LogManager.getLogger();
+				log.debug("Volcando datos en BD");
+			}catch (Throwable e) {
+				System.out.println(e.getMessage());
+			}
 			Reader r = new FileReader(f_txt);
 			BufferedReader br = new BufferedReader (r);
 			linea = br.readLine();
@@ -87,6 +97,5 @@ public class ConectarBD {
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}	
-		
 	}
 }

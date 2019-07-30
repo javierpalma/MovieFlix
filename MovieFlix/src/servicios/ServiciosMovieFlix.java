@@ -2,16 +2,13 @@ package servicios;
 
 import java.util.List;
 import java.util.Scanner;
-import java.util.ArrayList;
 
-import datos.GenerarInforme;
 import beans.Categoria;
 import beans.Pelicula;
 import datos.DatosPelicula;
 import datos.GenerarInforme;
+import utilidades.Menu;
 import utilidades.PedirDatos;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
@@ -37,36 +34,42 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		c.setNombre(nombreCategoria);
 		pelicula.setCategoria(c);
 		new DatosPelicula().altaPelicula(pelicula);*/
-		
 	}	
 
 	@Override
 	public void bajaPelicula() {
-		new DatosPelicula().bajaPelicula(PedirDatos.pidePelicula());
+		new DatosPelicula().bajaPelicula(PedirDatos.pidePelicula().getNombre());
+		
 	}
 
 	@Override
 	public boolean modificarPelicula(Pelicula pelicula) {
-		// TODO Auto-generated method stub
+		DatosPelicula.modificaPelicula(pelicula);
 		return false;
 	}
-	
-	//Método que imprime una lista de películas de la bd por medio de una llamada a otro método en la capa datos
-	/**
-	 * @author Jose Miguel
-	 */
+
 	@Override
-	public void listar() {
-		GenerarInforme gi = new GenerarInforme();
-		ArrayList<Pelicula> peliculas = gi.listarPeliculas();
-		for (Pelicula pelicula : peliculas) {
-			System.out.println(pelicula);
-		}
+	public List<Pelicula> listar() {
+		GenerarInforme f= new GenerarInforme();
+		return f.listarPeliculas();
 	}
 
 	@Override
 	public void arrancarAplicacion() {
-		// TODO Auto-generated method stub
+		
+		Menu.mostrarMenu();
+		int opcion=new Scanner(System.in).nextInt();
+		
+		switch(opcion) {
+			case 1: this.altaPelicula();break;
+			case 2:	this.bajaPelicula();break;
+			case 3: this.modificarPelicula(PedirDatos.pidePelicula());break;
+			case 4:	
+			case 5:
+			case 6:
+			case 7:
+			case 0:break;s
+		}
 		
 	}
 	
