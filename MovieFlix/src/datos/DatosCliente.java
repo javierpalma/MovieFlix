@@ -153,8 +153,7 @@ public class DatosCliente {
 		Connection co=null;
 		ConectarBD conect=new ConectarBD();
 		Logger logger=LogManager.getLogger();
-		DatosPelicula dp= new DatosPelicula();
-		ArrayList lista= new ArrayList();
+		ArrayList<Pelicula> lista= new ArrayList();
 		
 		//String sql="INSERT INTO CLIENTE_PELICULA (ID_CLIENTE, ID_PELICULA, VISTA, VALORACION) VALUES ('"+cliente.getId()+"', "+pelicula.getId()+", false, NULL);";
 		
