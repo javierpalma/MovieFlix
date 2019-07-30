@@ -77,9 +77,12 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 					break;
 				case 3: this.modificarPelicula();
 					break;
-				//case 4:	this.altaCliente();break;
-				//case 5:	this.bajaCliente(); break;
-				//case 6:	this.modificarCliente();break;
+				case 4:	this.altaCliente();
+					break;
+				case 5:	this.bajaCliente(); 
+					break;
+				case 6:	this.modificarCliente();
+					break;
 				case 7: do{
 						Menu.listarInformes();
 						opcion2= new Scanner(System.in).nextInt();
@@ -88,7 +91,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 							this.listarPeliculas();
 							break;
 						case 2:
-							
+							this.listarPeliculaPorCategoria();
 							break;
 						case 3:
 							
@@ -111,11 +114,20 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 			}
 		}while(opcion!=0);
 	}
-
+	
 	@Override
 	public void listarPeliculaCliente() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void listarPeliculaPorCategoria() {
+		GenerarInforme f= new GenerarInforme();
+		ArrayList<Pelicula> peliculas = f.listarPeliculaPorCategoria(categoria);
+		for (Pelicula pelicula : peliculas) {
+			System.out.println(pelicula.getNombre()+"-"+pelicula.getAnyoEstreno()+"-"+pelicula.getCategoria().getNombre());
+		}
 	}
 
 	@Override

@@ -16,6 +16,7 @@ public interface I_ServiciosMovieFlix {
 	//Sprint2
 	
 	public void listarPeliculaCliente();
+	public void listarPeliculaPorCategoria();
 	public void listarPeliculaNoVistaCliente();
 	public void listarPeliculaPorValoracion();
 	public boolean modificarCliente();
