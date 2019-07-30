@@ -68,7 +68,7 @@ public class DatosCliente {
 		java.sql.Statement stm= null;
 		ResultSet rs=null;
 		
-		String sql="";
+		String sql="SELECT * FROM CLIENTE WHERE NOMBRE CLIENTE=NOMBRE";
 		Cliente c = new Cliente();
 		
 		
@@ -79,13 +79,15 @@ public class DatosCliente {
 			
 			while (rs.next()) {
 				
-				c.setIdCliente(rs.getInt);
+				c.setIdCliente(rs.getInt());
 				c.setNombreCliente(rs.getString());
+				c.setFechaNacimiento(rs.getLocalDate());
+				c.setCiudad(rs.getString());
 				
 		
-				if(c.getNombre().trim().equalsIgnoreCase(nombre)) {
-					System.out.println("");
-					return c.getNmbre();
+				if(c.getNombreCliente().trim().equalsIgnoreCase(nombre)) {
+					System.out.println("El cliente existe");
+					return c.getString();
 				}
 				else {
 					flag= -1;
@@ -102,7 +104,7 @@ public class DatosCliente {
             lgr.log(Level.INFO, "FALLO EN PARÁMETRO NOMBRE, MÉTODO obtenerCliente");
 		}
 		
-		return c.getNombre();
+		return c.getString();
 	}
 	
 	
