@@ -68,7 +68,7 @@ public class GenerarInforme {
 		Logger logger = LogManager.getLogger(); 
 		
 		String sql="SELECT P.ID_PELICULA, P.nombre_pelicula, p.anyo_estreno, p.id_categoria, c.nombre FROM PELICULA AS P, CATEGORIA AS C WHERE P.ID_CATEGORIA = C.ID_CATEGORIA AND P.id_categoria="+categoria.getId()+";";
-		ArrayList<Pelicula> listaPelicula= new ArrayList<Pelicula>();
+		ArrayList<Pelicula> miListaPelicula= new ArrayList<Pelicula>();
 		
 		try {			
 			co= conect.conectarBD("movieflix") ;
@@ -84,8 +84,8 @@ public class GenerarInforme {
 				c.setId(rs.getInt(4));
 				c.setNombre(rs.getString(5));
 				p.setCategoria(c);
-				listaPelicula.add(p);
-				//System.out.println(p);
+				miListaPelicula.add(p);
+				
 				
 			}
 			stm.close();
@@ -95,20 +95,20 @@ public class GenerarInforme {
 			System.out.println("Error: Clase GenerarInforme, método ListarPeliculaPorCategoría");
 			logger.info(e.getMessage());
 		}
-		
-		return listaPelicula;
+		return miListaPelicula;
 	}
 	
 	public ArrayList<Pelicula> listarPeliculasCliente(Cliente cliente){
+		ArrayList<Pelicula> listaPelicula= new ArrayList<Pelicula>();
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
 		ResultSet rs=null;
 		Logger logger = LogManager.getLogger(); 
 		
-		String sql="SELECT * FROM CLIENTE_PELICULA, PELICULA, categoria WHERE ID_CLIENTE ="+cliente.getIdCliente()+" AND  cliente_pelicula.id_pelicula = pelicula.id_pelicula AND pelicula.id_categoria = categoria.nombre;";
+		String sql="SELECT * FROM CLIENTE_PELICULA AS CL, PELICULA AS P, categoria AS C WHERE CL.ID_CLIENTE="+cliente.getIdCliente()+" AND P.ID_CATEGORIA=C.ID_CATEGORIA AND CL.ID_PELICULA=P.ID_PELICULA ORDER BY P.ID_PELICULA;";
 		
-		ArrayList<Pelicula> listaPelicula= new ArrayList<Pelicula>();
+		
 		
 		try {			
 			co= conect.conectarBD("movieflix") ;
@@ -125,12 +125,10 @@ public class GenerarInforme {
 				p.setNombre(rs.getString(6));
 				p.setAnyoEstreno(rs.getInt(7));
 				cat.setId(rs.getInt(9));
-				cat.setNombre(rs.getString(11));
+				cat.setNombre(rs.getString(10));
+				p.setCategoria(cat);
 				
-				
-				listaPelicula.add(p);
-				//System.out.println(p);
-				
+				listaPelicula.add(p);				
 			}
 			stm.close();
 			rs.close();
@@ -138,6 +136,7 @@ public class GenerarInforme {
 		} catch (SQLException e) {
 			System.out.println("Error: Clase GenerarInforme, método ListarPeliculaCliente");
 			logger.info(e.getMessage());
+			return null;
 		}
 		
 		return listaPelicula;

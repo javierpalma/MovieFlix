@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import beans.Categoria;
 import servicios.ConectarBD;
@@ -36,11 +37,16 @@ public class GestionCategoria {
 	public int obtenerIdCategoria(String nombre) {
 		Connection co=null;
 		ConectarBD con=new ConectarBD();
-		co=con.conectarBD("MovieFlix");
+		Statement stm = null;
+		ResultSet rs= null;
+		String sql= "SELECT id_categoria, nombre FROM categoria WHERE nombre='"+nombre+"';";
 		try {
-			PreparedStatement pt= co.prepareStatement("SELECT id_categoria, nombre FROM categoria WHERE nombre='"+nombre+"';");
-			ResultSet rs = pt.executeQuery();
-			return rs.getInt(1);
+			co=con.conectarBD("movieflix");
+			stm = co.createStatement();
+			rs = stm.executeQuery(sql);
+			while(rs.next()) {
+				return rs.getInt(1);
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
