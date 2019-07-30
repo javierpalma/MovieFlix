@@ -39,6 +39,13 @@ public class PedirCliente {
 		return new Cliente(nombre,ld, ciudad);
 	}
 	
+	//poner posit morado porque se necesita para solo pedir nombre para borrar usuario
+	public static String borrarCliente() {
+		System.out.println("Nombre: ");
+		String nombre=new Scanner(System.in).nextLine();
+		return nombre;
+	}
+	
 	@SuppressWarnings("resource")
 	/**
 	 *

@@ -7,9 +7,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
-
-
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -221,24 +218,18 @@ public class DatosCliente {
 				
 		}
 	
-	public void bajaCliente(Cliente cliente) {
-		if(obtenerCliente(cliente.getNombreCliente())!=null) {
+	public void bajaCliente(String nombre) {
 			
-			try(Connection co=new ConectarBD().conectarBD("moviflix")) {
-				PreparedStatement pt= co.prepareStatement("DELETE FROM cliente  ( '"+cliente.getNombreCliente()+"','"+cliente.getFechaNacimiento()+"','"+cliente.getCiudad()+"');");
-				System.out.println(pt);
+			try(Connection co=new ConectarBD().conectarBD("movieflix")) {
+				String sql="DELETE FROM CLIENTE WHERE NOMBRE_CLIENTE='"+nombre+"';";
+				PreparedStatement pt= co.prepareStatement(sql);//'"+cliente.getNombreCliente()+"');"); /*+"','"+cliente.getFechaNacimiento()+"','"+cliente.getCiudad()+"');");*/
 				pt.executeUpdate();
-				cliente = obtenerCliente(cliente.getNombreCliente());
-				for(int i=1; i<7; i++) {
-					Categoria categoria = new Categoria();
-					categoria.setId(i);
-					this.asignarCatalogoCliente(cliente, categoria);
-				}
+				System.out.println("Borrado usuario con exito.");
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-				
-		}
+			
+			
 	}
 	
 	
