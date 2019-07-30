@@ -25,18 +25,26 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		
 	}
 
+	/**
+	 * @author Jose Miguel
+	 */
 	@Override
 	public boolean modificarPelicula() {
 		int id;
 		DatosPelicula dp = new DatosPelicula();
 		PedirDatos pd = new PedirDatos();
 		Pelicula p1 = new Pelicula();
+		Pelicula p2 = new Pelicula();
 		
-		id = dp.obtenerPelicula(p1.getNombre());
-		p1.setId(id);
 		p1 = pd.pidePelicula();
+				
+		id = dp.obtenerPelicula(p1.getNombre());
 		
-		//actualizar pelicula
+		p2 = pd.pidePelicula();
+		p2.setId(id);
+		
+		dp.modificaPelicula(p2);
+		
 		return false;
 	}
 
