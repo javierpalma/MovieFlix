@@ -3,6 +3,7 @@ package datos;
 import java.sql.Connection;
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -12,8 +13,9 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
+import beans.Categoria;
 import beans.Cliente;
+import beans.Pelicula;
 import servicios.ConectarBD;
 
 /**
@@ -142,6 +144,31 @@ public class DatosCliente {
 		}
 		
 		return actualizar;
+	}
+	
+
+	public void asignarCategoriaCliente(Cliente cliente, Categoria categoria) {
+		
+		
+		Connection co=null;
+		ConectarBD conect=new ConectarBD();
+		Logger logger=LogManager.getLogger();
+		DatosPelicula dp= new DatosPelicula();
+		ArrayList lista= new ArrayList();
+		
+		//String sql="INSERT INTO CLIENTE_PELICULA (ID_CLIENTE, ID_PELICULA, VISTA, VALORACION) VALUES ('"+cliente.getId()+"', "+pelicula.getId()+", false, NULL);";
+		
+		try {
+			co=conect.conectarBD("movieFlix");
+			java.sql.Statement stm=co.createStatement();
+	
+			for(Object elemento : lista) {
+				String sql="INSERT INTO CLIENTE_PELICULA (ID_CLIENTE, ID_PELICULA, VISTA, VALORACION) VALUES ('"+cliente.getIdCliente()+"', "+dp.getPelicula().getId()+", false, NULL);";
+				stm.executeQuery(sql);
+			}
+		}catch(SQLException e) {
+			logger.info("Error: clase DatosClientes, metodo asignarCategoria");
+		}
 	}
 
 }
