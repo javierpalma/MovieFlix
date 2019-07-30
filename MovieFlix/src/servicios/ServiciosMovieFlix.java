@@ -182,6 +182,19 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	
 	@Override
 	public void bajaCliente() {
+		DatosCliente dc = new DatosCliente();
+		Cliente c = new Cliente();
+		
+		c = PedirCliente.pideCliente();
+		String nombreCliente = c.getNombreCliente();
+		//dc.obtenerCliente(c.getNombreCliente());
+		
+		if(dc.obtenerCliente(c.getNombreCliente()) == null) {
+			//llamar al altarCliente de la clase DatosCliente
+			dc.altaCliente(c);
+		}else {
+			System.out.println("El cliente ya existe, no se puede crear.");
+		}
 		
 		
 	}
