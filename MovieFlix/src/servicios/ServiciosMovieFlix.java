@@ -6,6 +6,7 @@ import java.util.Scanner;
 import beans.Categoria;
 import beans.Pelicula;
 import datos.DatosPelicula;
+import datos.GenerarInforme;
 import utilidades.PedirDatos;
 
 public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
@@ -48,8 +49,8 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	@Override
 	public List<Pelicula> listar() {
-	
-		return null;
+		GenerarInforme f= new GenerarInforme();
+		return f.listarPeliculas();
 	}
 
 	@Override
