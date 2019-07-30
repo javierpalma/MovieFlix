@@ -15,13 +15,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		//new ServiciosMovieFlix().arrancarAplicacion();
-		LocalDate now = LocalDate.of(2019, 3, 1);
-		
-		Cliente c = new Cliente(1,"Josemi",now,"Sevilla");
-		
-		DatosCliente dc = new DatosCliente();
-		dc.modificaCliente(c);
+		new ServiciosMovieFlix().arrancarAplicacion();
+
 	}
 	
 	
