@@ -148,7 +148,11 @@ public class DatosCliente {
 		return actualizar;
 	}
 	
-
+	/**
+	 * @author Vladimir Juan
+	 * @param cliente
+	 * @param categoria
+	 */
 	public void asignarCategoriaCliente(Cliente cliente, Categoria categoria) {
 		
 		
@@ -171,7 +175,11 @@ public class DatosCliente {
 			logger.info("Error: clase DatosClientes, metodo asignarCategoria");
 		}
 	}
-	
+	/**
+	 * @author Vladimir Juan
+	 * @param cliente
+	 * @param categoria
+	 */
 	public void asignarCatalogoCliente(Cliente cliente, Categoria categoria) {
 		Connection co=null;
 		ConectarBD conect= new ConectarBD();
@@ -188,7 +196,10 @@ public class DatosCliente {
 		}
 		
 	}
-	
+	/**
+	 * 
+	 * @param cliente
+	 */
 	public void altaCliente(Cliente cliente) {
 		
 			Connection co=null;
