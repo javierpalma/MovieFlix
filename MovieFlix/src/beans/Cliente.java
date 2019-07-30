@@ -38,6 +38,12 @@ public class Cliente {
 		this.ciudad = ciudad;
 	}
 	
+	public Cliente(String nombreCliente, LocalDate fechaNacimiento, String ciudad) {
+		this.nombreCliente=nombreCliente;
+		this.fechaNacimiento=fechaNacimiento;
+		this.ciudad=ciudad;
+	}
+	
 	/**
 	 * 
 	 * @return

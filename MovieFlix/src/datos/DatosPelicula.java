@@ -97,9 +97,9 @@ public class DatosPelicula {
 		Connection co =null;
 		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
-		ResultSet rs=null;
+		int rs;
 		int id= this.obtenerPelicula(nombre);
-		String sql="DELETE * FROM PELICULA WHERE ID_PELICULA="+id;
+		String sql="DELETE FROM PELICULA WHERE ID_PELICULA="+id;
 		boolean baja = false;
 		
 		if(id!=-1) {
@@ -107,7 +107,7 @@ public class DatosPelicula {
 			try {
 				co= conect.conectarBD("movieflix") ;
 				stm=co.createStatement();
-				rs=stm.executeQuery(sql+id);
+				rs=stm.executeUpdate(sql);
 				baja= true;
 				
 			} catch (SQLException e) {
@@ -175,7 +175,7 @@ public class DatosPelicula {
             lgr.log(Level.INFO, "FALLO EN PARÁMETRO NOMBRE, MÉTODO obtenerPelicula");
 		}
 		
-		return p.getId();
+		return flag;
 	}
 	/**
 	 * @author Jose Miguel

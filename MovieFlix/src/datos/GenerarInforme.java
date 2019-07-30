@@ -29,7 +29,6 @@ public class GenerarInforme {
 		Logger logger = LogManager.getLogger(); 
 		
 		String sql="SELECT PELICULA.NOMBRE_PELICULA, PELICULA.ANYO_ESTRENO, CATEGORIA.NOMBRE FROM PELICULA, CATEGORIA WHERE PELICULA.ID_CATEGORIA = CATEGORIA.ID_CATEGORIA;";
-		System.out.println(sql);
 		ArrayList<Pelicula> listaPelicula= new ArrayList<Pelicula>();
 		
 		try {			
