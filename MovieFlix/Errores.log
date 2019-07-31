@@ -46,3 +46,15 @@
 [DEBUG] - ConectarBD:50 2019-07-31 07:23:20 - Conectando con BD:
 [DEBUG] - ConectarBD:50 2019-07-31 07:25:09 - Conectando con BD:
 [DEBUG] - ConectarBD:50 2019-07-31 07:26:26 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-31 08:01:09 - Conectando con BD:
+[ INFO] - DatosCliente:258 2019-07-31 08:01:11 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' WHERE ID_CLIENTE =0AND ID_PELICULA =0' at line 1
+[DEBUG] - ConectarBD:50 2019-07-31 08:03:25 - Conectando con BD:
+[ INFO] - DatosCliente:258 2019-07-31 08:03:26 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' WHERE ID_CLIENTE =0 AND ID_PELICULA =0' at line 1
+[DEBUG] - ConectarBD:50 2019-07-31 08:03:26 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-31 08:11:29 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-31 08:11:35 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-31 08:11:35 - Conectando con BD:
+[ INFO] - DatosCliente:258 2019-07-31 08:11:35 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' WHERE ID_CLIENTE = 1 AND ID_PELICULA = 1' at line 1
+[DEBUG] - ConectarBD:50 2019-07-31 08:21:45 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-31 08:21:52 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-31 08:21:52 - Conectando con BD:

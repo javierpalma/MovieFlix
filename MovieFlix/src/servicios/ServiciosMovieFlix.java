@@ -152,11 +152,18 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	@Override
 	public void verPelicula() {
 		DatosCliente dc = new DatosCliente();
+		DatosPelicula dp= new DatosPelicula();
 		Cliente c = new Cliente();
 		Pelicula p = new Pelicula();
-		c = PedirCliente.pideCliente();
-		p = PedirDatos.pidePelicula();
-		dc.verPelicula(c, p);
+		c = PedirCliente.pideNombre();
+		c = dc.obtenerCliente(c.getNombreCliente());
+		System.out.println(c);
+		p = PedirDatos.pideNombre();
+		p.setId(dp.obtenerPelicula(p.getNombre()));
+		System.out.println(p);
+		if(c!=null && p.getId()!=-1) {
+			dc.verPelicula(c, p);
+		}
 	}
 		
 	
