@@ -182,15 +182,15 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	}
 		
 	
-	/**
-	 * @author Jose Miguel 
-	 */
-	//Implementación que comprueba si el existe el cliente y la película, de ser así, se introduce una valoración de dicha película a la bd
 	@Override
 	public void listarPeliculaPorValoracion() {	
 		
 	}
 	
+	/**
+	 * @author Jose Miguel
+	 */
+	//Implementación que comprueba si el existe el cliente y la película, de ser así, se introduce una valoración de dicha película a la bd
 	@Override
 	public void valorarPelicula() {
 		
