@@ -85,24 +85,22 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 					break;
 				case 6:	this.modificarCliente();
 					break;
-				case 7: do{
+				case 7: this.verPelicula();
+				case 8: do{
 						Menu.listarInformes();
 						opcion2= new Scanner(System.in).nextInt();
 						switch (opcion2) {
 						case 1:
 							this.listarPeliculas();
 							break;
-						case 2:
-							this.listarPeliculaPorCategoria();
-							break;
 						case 3:
-							this.listarPeliculaPorValoracion();
+							this.listarClientes();
 							break;
 						case 4:
-							this.listarPeliculaCliente();
+							this.listarPeliculaPorValoracion();
 							break;
 						case 5:
-							this.verPelicula();
+							this.listarPeliculaCliente();
 							break;
 						case 0:
 							break;
@@ -115,6 +113,11 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 				case 0: break;
 			}
 		}while(opcion!=0);
+	}
+	
+	@Override
+	public void listarClientes() {
+		
 	}
 	
 	@Override
