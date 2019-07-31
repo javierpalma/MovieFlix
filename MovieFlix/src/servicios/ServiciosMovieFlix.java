@@ -179,10 +179,29 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	}
 		
 	
-
+	/**
+	 * @author Jose Miguel 
+	 */
+	//Implementación que comprueba si el existe el cliente y la película, de ser así, se introduce una valoración de dicha película a la bd
 	@Override
 	public void listarPeliculaPorValoracion() {
-		// TODO Auto-generated method stub
+		
+		DatosCliente dc = new DatosCliente();
+		DatosPelicula dp= new DatosPelicula();
+		Cliente c = new Cliente();
+		Pelicula p = new Pelicula();
+		
+		c = PedirCliente.pideNombre();
+		c = dc.obtenerCliente(c.getNombreCliente());
+		System.out.println(c);
+		
+		p = PedirDatos.pideNombre();
+		p.setId(dp.obtenerPelicula(p.getNombre()));
+		if(c!=null && p.getId()!=-1) {
+			int valoracion = PedirDatos.pideValoracion();
+			dc.valorarPelicula(c, p, valoracion);
+		}
+		
 		
 	}
 
