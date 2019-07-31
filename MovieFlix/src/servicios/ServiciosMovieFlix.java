@@ -125,7 +125,8 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	
 	@Override
 	public void listarClientes() {
-		//new GenerarInforme().listarClientes();
+		ArrayList<Cliente> lista= new GenerarInforme().listarCliente();
+		lista.forEach(cliente -> System.out.println(cliente));
 	}
 	
 	@Override
