@@ -22,7 +22,8 @@ public class Menu {
 		System.out.println("2 - Listado Usuarios");
 		System.out.println("3 - Listado Peliculas por Categoria");	
 		System.out.println("4 - Listado Peliculas por Valoracion");	
-		System.out.println("5 - Listado Catalogo Cliente");			
+		System.out.println("5 - Listado Catalogo Cliente");	
+		System.out.println("6 - Listado Peliculas NO vistas");
 		System.out.println("0 - Salirr");
 		System.out.println("*********************************");
 	}

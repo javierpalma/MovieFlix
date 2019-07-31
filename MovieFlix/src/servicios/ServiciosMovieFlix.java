@@ -102,6 +102,9 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 						case 5:
 							this.listarPeliculaCliente();
 							break;
+						case 6:
+							this.listarPeliculaNoVistaCliente();
+							break;
 						case 0:
 							break;
 	
