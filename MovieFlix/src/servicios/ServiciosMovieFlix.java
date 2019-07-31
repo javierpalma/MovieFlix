@@ -182,7 +182,12 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	 */
 	//Implementación que comprueba si el existe el cliente y la película, de ser así, se introduce una valoración de dicha película a la bd
 	@Override
-	public void listarPeliculaPorValoracion() {
+	public void listarPeliculaPorValoracion() {	
+		
+	}
+	
+	@Override
+	public void valorarPelicula() {
 		
 		DatosCliente dc = new DatosCliente();
 		DatosPelicula dp= new DatosPelicula();
@@ -199,7 +204,6 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 			int valoracion = PedirDatos.pideValoracion();
 			dc.valorarPelicula(c, p, valoracion);
 		}
-		
 		
 	}
 

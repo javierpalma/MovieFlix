@@ -24,5 +24,6 @@ public interface I_ServiciosMovieFlix {
 	public boolean modificarCliente();
 	public void altaCliente();
 	public void bajaCliente();
+	public void valorarPelicula();
 	
 }
