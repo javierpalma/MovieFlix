@@ -27,7 +27,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	@Override
 	public void bajaPelicula() {
-		new DatosPelicula().bajaPelicula(PedirDatos.pideNombre().getNombre());
+		new DatosPelicula().bajaPelicula(PedirDatos.pidePelicula().getNombre());
 		
 	}
 
@@ -43,7 +43,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		Pelicula p1 = new Pelicula();
 		Pelicula p2 = new Pelicula();
 		
-		p1 = PedirDatos.pideNombre();
+		p1 = PedirDatos.pidePelicula();
 				
 		id = dp.obtenerPelicula(p1.getNombre());
 		
@@ -127,7 +127,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	public void listarPeliculaCliente() {
 		GenerarInforme f= new GenerarInforme();
 		Cliente cliente = new Cliente();
-		cliente = PedirCliente.pideNombre();
+		cliente = PedirCliente.pideCliente();
 		cliente = new DatosCliente().obtenerCliente(cliente.getNombreCliente());
 		if(cliente!=null) {
 			ArrayList<Pelicula> misPeliculas = f.listarPeliculasCliente(cliente);
@@ -194,10 +194,11 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		
 		
 		DatosCliente dc = new DatosCliente();
+		PedirCliente pc = new PedirCliente();
 		Cliente c = new Cliente();
 		
-		c =PedirCliente.pideCliente();
-		c.getNombreCliente();
+		c = pc.pideCliente();
+		String nombreCliente = c.getNombreCliente();
 		//dc.obtenerCliente(c.getNombreCliente());
 		
 		if(dc.obtenerCliente(c.getNombreCliente()) == null) {
@@ -212,12 +213,13 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	@Override
 	public void bajaCliente() {
 		DatosCliente dc = new DatosCliente();
-		Cliente c = new Cliente();
-		 c = PedirCliente.pideNombre();
 		
-		if(dc.obtenerCliente(c.getNombreCliente()) != null) {
+		String nombreCliente =  PedirCliente.borrarCliente();
+		//dc.obtenerCliente(c.getNombreCliente());
+		
+		if(dc.obtenerCliente(nombreCliente) != null) {
 			//llamar al altarCliente de la clase DatosCliente
-			dc.bajaCliente(c);
+			dc.bajaCliente(nombreCliente);
 		}else {
 			System.out.println("El cliente no existe, no se puede borrar.");
 		}
@@ -233,16 +235,19 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	public boolean modificarCliente() {
 		
 		DatosCliente dc = new DatosCliente();
+		PedirCliente pc = new PedirCliente();
 		Cliente c1 = new Cliente();
 		Cliente c2 = new Cliente();
+		Cliente c3 = new Cliente();
 		
-		c1 =PedirCliente.pideNombre();
+		c1 = pc.pideCliente();
 		
-		c1 = dc.obtenerCliente(c1.getNombreCliente());
+		c3 = dc.obtenerCliente(c1.getNombreCliente());
+		c3.getIdCliente();
 		
 		System.out.println("-- TOCA MODIFICAR EL CLIENTE, INTRODUCE LOS NUEVOS DATOS");
-		c2 = PedirCliente.pideCliente();
-		c2.setIdCliente(c1.getIdCliente());
+		c2 = pc.pideCliente();
+		c2.setIdCliente(c3.getIdCliente());
 		
 		dc.modificaCliente(c2);
 		
