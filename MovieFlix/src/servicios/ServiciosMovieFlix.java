@@ -43,10 +43,9 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		Pelicula p1 = new Pelicula();
 		Pelicula p2 = new Pelicula();
 		
-		p1 = PedirDatos.pidePelicula();
+		p1 = PedirDatos.pideNombre();
 				
 		id = dp.obtenerPelicula(p1.getNombre());
-		
 		System.out.println("-- TOCA MODIFICAR LA PELÍCULA, INTRODUCE LOS NUEVOS DATOS");
 		p2 = PedirDatos.pidePelicula();
 		p2.setId(id);
@@ -86,15 +85,21 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 				case 6:	this.modificarCliente();
 					break;
 				case 7: this.verPelicula();
-				case 8: do{
+					break;
+				case 8: this.valorarPelicula();
+					break;
+				case 9: do{
 						Menu.listarInformes();
 						opcion2= new Scanner(System.in).nextInt();
 						switch (opcion2) {
 						case 1:
 							this.listarPeliculas();
 							break;
+						case 2:
+							this.listarClientes();;
+							break;
 						case 3:
-							this.listarClientes();
+							this.listarPeliculaPorCategoria();
 							break;
 						case 4:
 							this.listarPeliculaPorValoracion();
