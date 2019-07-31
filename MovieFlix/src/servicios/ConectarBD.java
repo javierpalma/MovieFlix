@@ -22,7 +22,7 @@ import org.apache.logging.log4j.Level;
  * @version 1.0
  */
 
-public class ConectarBD {
+public class ConectarBD implements Cloneable{
 	
 	private String bd;
 	String url = "jdbc:mysql://10.90.36.103:3306/";
