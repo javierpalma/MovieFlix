@@ -9,7 +9,9 @@ import java.sql.ResultSet;
 import java.io.File;
 import java.io.Reader;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.BufferedReader;
+import java.io.Closeable;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,7 +24,7 @@ import org.apache.logging.log4j.Level;
  * @version 1.0
  */
 
-public class ConectarBD implements Cloneable{
+public class ConectarBD implements AutoCloseable{
 	
 	private String bd;
 	String url = "jdbc:mysql://10.90.36.103:3306/";
@@ -97,5 +99,10 @@ public class ConectarBD implements Cloneable{
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}	
+	}
+
+	@Override
+	public void close() throws IOException {
+		System.out.println("Cerrando conexion");
 	}
 }
