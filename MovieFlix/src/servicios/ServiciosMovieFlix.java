@@ -102,7 +102,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 							this.listarPeliculaCliente();
 							break;
 						case 5:
-							
+							this.verPelicula();
 							break;
 						case 0:
 							break;
@@ -148,6 +148,13 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public void verPelicula() {
+		
+	}
+		
+	
 
 	@Override
 	public void listarPeliculaPorValoracion() {
