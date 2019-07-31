@@ -196,6 +196,15 @@ public class DatosCliente {
 	 */
 	public void altaCliente(Cliente cliente) {
 		
+		/*
+		 * Connection co = null;
+		 * ConectarBD con= new ConectarBD();
+		 * co=con.conectarBD("movieflix");
+		 * 
+		 * Usamos mejor el try with resources
+		 * 
+		 */
+		
 			try(Connection co=new ConectarBD().conectarBD("movieflix")) {
 				PreparedStatement pt= co.prepareStatement("INSERT INTO cliente (nombre_cliente,fecha_nacimiento,ciudad) VALUES ( '"+cliente.getNombreCliente()+"','"+cliente.getFechaNacimiento()+"','"+cliente.getCiudad()+"');");
 				System.out.println(pt);
