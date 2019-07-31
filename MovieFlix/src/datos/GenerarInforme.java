@@ -199,6 +199,7 @@ public class GenerarInforme {
 			
 			while(rs.next()) {
 				c=new Cliente();
+				c.setIdCliente(rs.getInt(1));
 				c.setNombreCliente(rs.getString(2));
 				c.setFechaNacimiento(rs.getDate(3).toLocalDate());
 				c.setCiudad(rs.getString(4));
