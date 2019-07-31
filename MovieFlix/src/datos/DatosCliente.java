@@ -225,10 +225,10 @@ public class DatosCliente {
 	 * Damos de baja un usuario
 	 * @param nombre
 	 */
-	public void bajaCliente(String nombre) {
+	public void bajaCliente(Cliente cliente) {
 			
 			try(Connection co=new ConectarBD().conectarBD("movieflix")) {
-				String sql="DELETE FROM CLIENTE WHERE NOMBRE_CLIENTE='"+nombre+"';";
+				String sql="DELETE FROM CLIENTE WHERE ID_CLIENTE="+cliente.getIdCliente()+";";
 				PreparedStatement pt= co.prepareStatement(sql);
 				pt.executeUpdate();
 				System.out.println("Borrado usuario con exito.");
@@ -268,6 +268,38 @@ public class DatosCliente {
 			logger.info(e.getMessage());
 		}
 		
+		
+	}
+	
+	/**
+	 * @author Jose Miguel
+	 * @param cliente
+	 * @param pelicula
+	 */
+	public void valorarPelicula(Cliente cliente, Pelicula pelicula, int valoracion) {
+		
+		Connection co =null;
+		ConectarBD conect = new ConectarBD();
+		java.sql.Statement stm= null;
+		Logger logger = LogManager.getLogger(); 
+		int rs;		
+	
+		
+		boolean actualizar=false;
+				
+		String sql="UPDATE CLIENTE_PELICULA SET CLIENTE_PELICULA.VALORACION = " + valoracion + " WHERE ID_CLIENTE = "+cliente.getIdCliente()+" AND ID_PELICULA = "+pelicula.getId()+";";
+		System.out.println(sql); 
+		try {
+			co= conect.conectarBD("movieflix") ;
+			stm=co.createStatement();
+			rs= stm.executeUpdate(sql);
+			
+			actualizar=true;
+			
+		} catch (SQLException e) {
+			System.out.println("Error: Clase DatosCLientes, método valorarPelicula");
+			logger.info(e.getMessage());
+		}
 		
 	}
 	

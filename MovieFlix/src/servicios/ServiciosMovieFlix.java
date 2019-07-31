@@ -27,7 +27,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	@Override
 	public void bajaPelicula() {
-		new DatosPelicula().bajaPelicula(PedirDatos.pidePelicula().getNombre());
+		new DatosPelicula().bajaPelicula(PedirDatos.pideNombre().getNombre());
 		
 	}
 
@@ -43,10 +43,9 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		Pelicula p1 = new Pelicula();
 		Pelicula p2 = new Pelicula();
 		
-		p1 = PedirDatos.pidePelicula();
+		p1 = PedirDatos.pideNombre();
 				
 		id = dp.obtenerPelicula(p1.getNombre());
-		
 		System.out.println("-- TOCA MODIFICAR LA PELÍCULA, INTRODUCE LOS NUEVOS DATOS");
 		p2 = PedirDatos.pidePelicula();
 		p2.setId(id);
@@ -86,21 +85,30 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 				case 6:	this.modificarCliente();
 					break;
 				case 7: this.verPelicula();
-				case 8: do{
+					break;
+				case 8: this.valorarPelicula();
+					break;
+				case 9: do{
 						Menu.listarInformes();
 						opcion2= new Scanner(System.in).nextInt();
 						switch (opcion2) {
 						case 1:
 							this.listarPeliculas();
 							break;
+						case 2:
+							this.listarClientes();;
+							break;
 						case 3:
-							this.listarClientes();
+							this.listarPeliculaPorCategoria();
 							break;
 						case 4:
 							this.listarPeliculaPorValoracion();
 							break;
 						case 5:
 							this.listarPeliculaCliente();
+							break;
+						case 6:
+							this.listarPeliculaNoVistaCliente();
 							break;
 						case 0:
 							break;
@@ -174,10 +182,33 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	}
 		
 	
-
 	@Override
-	public void listarPeliculaPorValoracion() {
-		// TODO Auto-generated method stub
+	public void listarPeliculaPorValoracion() {	
+		
+	}
+	
+	/**
+	 * @author Jose Miguel
+	 */
+	//Implementación que comprueba si el existe el cliente y la película, de ser así, se introduce una valoración de dicha película a la bd
+	@Override
+	public void valorarPelicula() {
+		
+		DatosCliente dc = new DatosCliente();
+		DatosPelicula dp= new DatosPelicula();
+		Cliente c = new Cliente();
+		Pelicula p = new Pelicula();
+		
+		c = PedirCliente.pideNombre();
+		c = dc.obtenerCliente(c.getNombreCliente());
+		System.out.println(c);
+		
+		p = PedirDatos.pideNombre();
+		p.setId(dp.obtenerPelicula(p.getNombre()));
+		if(c!=null && p.getId()!=-1) {
+			int valoracion = PedirDatos.pideValoracion();
+			dc.valorarPelicula(c, p, valoracion);
+		}
 		
 	}
 
@@ -206,23 +237,18 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		}
 		
 	}
-	
 	@Override
 	public void bajaCliente() {
 		DatosCliente dc = new DatosCliente();
+		Cliente c = new Cliente();
+		 c = PedirCliente.pideNombre();
 		
-		
-		String nombreCliente =  PedirCliente.borrarCliente();
-		//dc.obtenerCliente(c.getNombreCliente());
-		
-		if(dc.obtenerCliente(nombreCliente) != null) {
+		if(dc.obtenerCliente(c.getNombreCliente()) != null) {
 			//llamar al altarCliente de la clase DatosCliente
-			dc.bajaCliente(nombreCliente);
+			dc.bajaCliente(c);
 		}else {
 			System.out.println("El cliente no existe, no se puede borrar.");
-		}
-		
-		
+		}	
 	}
 	
 	/**
