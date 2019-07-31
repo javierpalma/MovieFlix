@@ -152,6 +152,10 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		
 	}
 	
+	/**
+	 * @author Jose Miguel, Javier Palma
+	 */
+	//Implantación que llama al método ver película donde se registra en el base de datos que el cliente ve la película.
 	@Override
 	public void verPelicula() {
 		DatosCliente dc = new DatosCliente();
