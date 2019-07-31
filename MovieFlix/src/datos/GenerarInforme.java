@@ -3,6 +3,7 @@ package datos;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -142,7 +143,30 @@ public class GenerarInforme {
 		return listaPelicula;
 	}
 	
-	
+	public ArrayList<Cliente> listarClientes(){
+		
+		ArrayList<Cliente> lista=new ArrayList<>();
+		try(Connection co=new ConectarBD().conectarBD("movieflix")){
+			Cliente c= new Cliente();
+			String sql="SELECT * FROM cliente";
+			Statement st=co.createStatement();
+			ResultSet rt=st.executeQuery(sql);
+			while(rt.next()) {
+				c.setNombreCliente(rt.getString(2));
+				c.setFechaNacimiento(rt.getDate(3).toLocalDate());
+				c.setCiudad(rt.getString(4));
+				lista.add(c);
+			}
+			
+				//System.out.println(p)
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return lista;
+		
+	}
 	
 	
 	
