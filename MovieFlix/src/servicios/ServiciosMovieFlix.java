@@ -1,7 +1,7 @@
 package servicios;
 
 import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 import beans.Categoria;
@@ -15,7 +15,7 @@ import utilidades.Menu;
 import utilidades.PedirCategoria;
 import utilidades.PedirCliente;
 import utilidades.PedirDatos;
-import datos.DatosCliente;
+
 public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	
