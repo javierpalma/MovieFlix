@@ -11,7 +11,7 @@ public class Menu {
 		System.out.println("5. Baja usuario");
 		System.out.println("6. Modificar usuario");
 		System.out.println("7. Ver Pelicula");
-		System.out.println("8. Ver Pelicula");
+		System.out.println("8. Valorar Pelicula");
 		System.out.println("9. Informes");
 		System.out.println("0. Salir");
 		System.out.println("------------------------------");

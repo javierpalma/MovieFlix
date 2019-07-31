@@ -126,7 +126,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	@Override
 	public void listarClientes() {
 		ArrayList<Cliente> lista= new GenerarInforme().listarCliente();
-		lista.forEach(cliente -> System.out.println(cliente));
+		lista.forEach(cliente -> System.out.println(cliente.getNombreCliente()+"-"+cliente.getCiudad()+"-"+cliente.getFechaNacimiento()));
 	}
 	
 	/**
@@ -243,8 +243,8 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		DatosCliente dc = new DatosCliente();
 		Cliente c = new Cliente();
 		 c = PedirCliente.pideNombre();
-		
-		if(dc.obtenerCliente(c.getNombreCliente()) != null) {
+		 c = dc.obtenerCliente(c.getNombreCliente());
+		if(c != null) {
 			//llamar al altarCliente de la clase DatosCliente
 			dc.bajaCliente(c);
 		}else {
@@ -260,19 +260,16 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	public boolean modificarCliente() {
 		
 		DatosCliente dc = new DatosCliente();
-		PedirCliente pc = new PedirCliente();
 		Cliente c1 = new Cliente();
 		Cliente c2 = new Cliente();
-		Cliente c3 = new Cliente();
+
 		
-		c1 = pc.pideCliente();
-		
-		c3 = dc.obtenerCliente(c1.getNombreCliente());
-		c3.getIdCliente();
+		c1 = PedirCliente.pideNombre();
+		c1 = dc.obtenerCliente(c1.getNombreCliente());
 		
 		System.out.println("-- TOCA MODIFICAR EL CLIENTE, INTRODUCE LOS NUEVOS DATOS");
-		c2 = pc.pideCliente();
-		c2.setIdCliente(c3.getIdCliente());
+		c2 = PedirCliente.pideCliente();
+		c2.setIdCliente(c1.getIdCliente());
 		
 		dc.modificaCliente(c2);
 		
