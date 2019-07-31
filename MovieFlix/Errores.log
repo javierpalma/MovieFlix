@@ -67,3 +67,11 @@
 [DEBUG] - ConectarBD:50 2019-07-31 09:06:40 - Conectando con BD:
 [DEBUG] - ConectarBD:50 2019-07-31 09:06:52 - Conectando con BD:
 [DEBUG] - ConectarBD:50 2019-07-31 09:07:00 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-31 09:18:47 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-31 09:19:08 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-31 09:19:16 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-31 09:27:20 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-31 09:27:21 - Conectando con BD:
+[ INFO] - GenerarInforme:183 2019-07-31 09:27:21 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT * FROM movieflix.cliente_pelicula WHERE VISTA=FALSE' at line 1
+[DEBUG] - ConectarBD:50 2019-07-31 09:29:52 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-31 09:29:52 - Conectando con BD:

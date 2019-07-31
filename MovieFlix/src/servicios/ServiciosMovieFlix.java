@@ -154,11 +154,6 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		}
 	}
 
-	@Override
-	public void listarPeliculaNoVistaCliente() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	/**
 	 * @author Jose Miguel, Javier Palma
@@ -278,7 +273,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	 return false;	
 	}
 	
-	public void listarPeliculaNoVista() {
+	public void listarPeliculaNoVistaCliente() {
 		GenerarInforme f= new GenerarInforme();
 		Cliente cliente = new Cliente();
 		cliente = PedirCliente.pideNombre();
@@ -290,8 +285,4 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 			}
 		}
 	}
-
-
-
-
 }

@@ -151,7 +151,7 @@ public class GenerarInforme {
 		ResultSet rs=null;
 		Logger logger = LogManager.getLogger(); 
 		
-		String sql="SELECT * FROM CLIENTE_PELICULA AS CL, PELICULA AS P, categoria AS C WHERE CL.ID_CLIENTE="+cliente.getIdCliente()+" AND P.ID_CATEGORIA=C.ID_CATEGORIA AND CL.ID_PELICULA=P.ID_PELICULA ORDER BY P.ID_PELICULA SELECT * FROM movieflix.cliente_pelicula WHERE VISTA=FALSE;";
+		String sql="SELECT * FROM CLIENTE_PELICULA AS CL, PELICULA AS P, categoria AS C WHERE CL.ID_CLIENTE="+cliente.getIdCliente()+" AND P.ID_CATEGORIA=C.ID_CATEGORIA AND CL.ID_PELICULA=P.ID_PELICULA AND VISTA = FALSE ORDER BY P.ID_PELICULA ";
 		
 		
 		
