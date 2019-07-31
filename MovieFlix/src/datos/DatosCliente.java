@@ -225,10 +225,10 @@ public class DatosCliente {
 	 * Damos de baja un usuario
 	 * @param nombre
 	 */
-	public void bajaCliente(String nombre) {
+	public void bajaCliente(Cliente cliente) {
 			
 			try(Connection co=new ConectarBD().conectarBD("movieflix")) {
-				String sql="DELETE FROM CLIENTE WHERE NOMBRE_CLIENTE='"+nombre+"';";
+				String sql="DELETE FROM CLIENTE WHERE ID_CLIENTE="+cliente.getIdCliente()+";";
 				PreparedStatement pt= co.prepareStatement(sql);
 				pt.executeUpdate();
 				System.out.println("Borrado usuario con exito.");
