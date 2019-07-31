@@ -229,5 +229,37 @@ public class DatosCliente {
 			
 	}
 	
+	/**
+	 * @author Jose Miguel
+	 * @param cliente
+	 * @param pelicula
+	 */
+	public void verPelicula(Cliente cliente, Pelicula pelicula) {
+		Connection co =null;
+		ConectarBD conect = new ConectarBD();
+		java.sql.Statement stm= null;
+		Logger logger = LogManager.getLogger(); 
+		int rs;		
+	
+		
+		boolean actualizar=false;
+				
+		String sql="UPDATE CLIENTE_PELICULA SET VISTA = TRUE'"+ " WHERE ID_CLIENTE ="+cliente.getIdCliente()+"AND ID_PELICULA ="+pelicula.getId();
+		System.out.println(sql); 
+		try {
+			co= conect.conectarBD("movieflix") ;
+			stm=co.createStatement();
+			rs= stm.executeUpdate(sql);
+			
+			actualizar=true;
+			
+		} catch (SQLException e) {
+			System.out.println("Error: Clase DatosCLientes, método verPelicula");
+			logger.info(e.getMessage());
+		}
+		
+		
+	}
+	
 	
 }
