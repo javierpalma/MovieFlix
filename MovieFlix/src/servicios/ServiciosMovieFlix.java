@@ -15,7 +15,7 @@ import utilidades.Menu;
 import utilidades.PedirCategoria;
 import utilidades.PedirCliente;
 import utilidades.PedirDatos;
-
+import datos.DatosCliente;
 public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	
@@ -151,7 +151,12 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	
 	@Override
 	public void verPelicula() {
-		
+		DatosCliente dc = new DatosCliente();
+		Cliente c = new Cliente();
+		Pelicula p = new Pelicula();
+		c = PedirCliente.pideCliente();
+		p = PedirDatos.pidePelicula();
+		dc.verPelicula(c, p);
 	}
 		
 	
