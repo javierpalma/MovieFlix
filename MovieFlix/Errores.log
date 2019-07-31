@@ -75,3 +75,5 @@
 [ INFO] - GenerarInforme:183 2019-07-31 09:27:21 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT * FROM movieflix.cliente_pelicula WHERE VISTA=FALSE' at line 1
 [DEBUG] - ConectarBD:50 2019-07-31 09:29:52 - Conectando con BD:
 [DEBUG] - ConectarBD:50 2019-07-31 09:29:52 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-31 09:46:04 - Conectando con BD:
+[DEBUG] - ConectarBD:50 2019-07-31 09:47:00 - Conectando con BD:
