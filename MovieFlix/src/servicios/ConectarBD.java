@@ -24,7 +24,7 @@ import org.apache.logging.log4j.Level;
  * @version 1.0
  */
 
-public class ConectarBD implements AutoCloseable{
+public class ConectarBD implements Closeable{
 	
 	private String bd;
 	String url = "jdbc:mysql://10.90.36.103:3306/";
@@ -103,6 +103,7 @@ public class ConectarBD implements AutoCloseable{
 
 	@Override
 	public void close() throws IOException {
+		this.close();
 		System.out.println("Cerrando conexion");
 	}
 }
