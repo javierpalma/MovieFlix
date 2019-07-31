@@ -27,7 +27,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	@Override
 	public void bajaPelicula() {
-		new DatosPelicula().bajaPelicula(PedirDatos.pidePelicula().getNombre());
+		new DatosPelicula().bajaPelicula(PedirDatos.pideNombre().getNombre());
 		
 	}
 
