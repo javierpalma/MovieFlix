@@ -251,6 +251,19 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		
 	 return false;	
 	}
+	
+	public void listarPeliculaNoVista() {
+		GenerarInforme f= new GenerarInforme();
+		Cliente cliente = new Cliente();
+		cliente = PedirCliente.pideNombre();
+		cliente = new DatosCliente().obtenerCliente(cliente.getNombreCliente());
+		if(cliente!=null) {
+			ArrayList<Pelicula> peliculasNoVistas = f.ListarPeliculaClienteNoVista(cliente);
+			for (Pelicula pelicula : peliculasNoVistas) {
+				System.out.println(pelicula.getNombre()+"-"+pelicula.getAnyoEstreno()+"-"+pelicula.getCategoria().getNombre());
+			}
+		}
+	}
 
 
 

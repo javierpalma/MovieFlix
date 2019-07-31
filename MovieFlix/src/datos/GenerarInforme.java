@@ -142,6 +142,51 @@ public class GenerarInforme {
 		return listaPelicula;
 	}
 	
+	public ArrayList<Pelicula> ListarPeliculaClienteNoVista(Cliente cliente){
+		
+		ArrayList<Pelicula> PeliculaNoVista= new ArrayList<Pelicula>();
+		Connection co =null;
+		ConectarBD conect = new ConectarBD();
+		java.sql.Statement stm= null;
+		ResultSet rs=null;
+		Logger logger = LogManager.getLogger(); 
+		
+		String sql="SELECT * FROM CLIENTE_PELICULA AS CL, PELICULA AS P, categoria AS C WHERE CL.ID_CLIENTE="+cliente.getIdCliente()+" AND P.ID_CATEGORIA=C.ID_CATEGORIA AND CL.ID_PELICULA=P.ID_PELICULA ORDER BY P.ID_PELICULA SELECT * FROM movieflix.cliente_pelicula WHERE VISTA=FALSE;";
+		
+		
+		
+		try {			
+			co= conect.conectarBD("movieflix") ;
+			stm=co.createStatement();
+			rs=stm.executeQuery(sql);
+			while (rs.next()) {
+				
+				Cliente c = new Cliente();
+				Pelicula p = new Pelicula();
+				Categoria cat = new Categoria();
+				
+				c.setIdCliente(rs.getInt(1));
+				p.setId(rs.getInt(2));
+				p.setNombre(rs.getString(6));
+				p.setAnyoEstreno(rs.getInt(7));
+				cat.setId(rs.getInt(9));
+				cat.setNombre(rs.getString(10));
+				p.setCategoria(cat);
+
+				PeliculaNoVista.add(p);				
+			}
+			stm.close();
+			rs.close();
+			co.close();
+		} catch (SQLException e) {
+			System.out.println("Error: Clase GenerarInforme, método ListarPeliculaClienteNoVista");
+			logger.info(e.getMessage());
+			return null;
+		}
+		
+		return PeliculaNoVista;
+	}
+	
 	
 	
 	
