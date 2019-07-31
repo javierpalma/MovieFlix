@@ -85,7 +85,10 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 				case 6:	this.modificarCliente();
 					break;
 				case 7: this.verPelicula();
-				case 8: do{
+					break;
+				case 8: this.valorarPelicula();
+					break;
+				case 9: do{
 						Menu.listarInformes();
 						opcion2= new Scanner(System.in).nextInt();
 						switch (opcion2) {
