@@ -191,7 +191,7 @@ public class DatosCliente {
 		
 	}
 	/**
-	 * 
+	 * Damos de alta un cliente
 	 * @param cliente
 	 */
 	public void altaCliente(Cliente cliente) {
@@ -206,6 +206,7 @@ public class DatosCliente {
 		 */
 		
 			try(Connection co=new ConectarBD().conectarBD("movieflix")) {
+				
 				PreparedStatement pt= co.prepareStatement("INSERT INTO cliente (nombre_cliente,fecha_nacimiento,ciudad) VALUES ( '"+cliente.getNombreCliente()+"','"+cliente.getFechaNacimiento()+"','"+cliente.getCiudad()+"');");
 				System.out.println(pt);
 				pt.executeUpdate();
@@ -220,7 +221,10 @@ public class DatosCliente {
 			}
 				
 		}
-	
+	/**
+	 * Damos de baja un usuario
+	 * @param nombre
+	 */
 	public void bajaCliente(String nombre) {
 			
 			try(Connection co=new ConectarBD().conectarBD("movieflix")) {
