@@ -73,10 +73,8 @@ public class DatosPelicula {
 			System.out.println("No se puede añadir, ya se añadio");
 		}
 		else {
-			Connection co=null;
-			ConectarBD con=new ConectarBD();
-			co=con.conectarBD("MovieFlix");
-			try {
+		
+			try(Connection co=new ConectarBD().conectarBD("movieflix")) {
 				PreparedStatement pt= co.prepareStatement("INSERT INTO pelicula (nombre_pelicula,anyo_estreno,id_categoria) VALUES ( '"+pelicula.getNombre()+"',"+pelicula.getAnyoEstreno()+","+pelicula.getCategoria().getId()+");");
 				pt.executeUpdate();
 			} catch (SQLException e) {
@@ -94,8 +92,6 @@ public class DatosPelicula {
 	
 	public boolean bajaPelicula(String nombre) {
 		
-		Connection co =null;
-		ConectarBD conect = new ConectarBD();
 		java.sql.Statement stm= null;
 		int rs;
 		int id= this.obtenerPelicula(nombre);
@@ -104,8 +100,7 @@ public class DatosPelicula {
 		
 		if(id!=-1) {
 			
-			try {
-				co= conect.conectarBD("movieflix") ;
+			try (Connection co=new ConectarBD().conectarBD("movieflix")){
 				stm=co.createStatement();
 				rs=stm.executeUpdate(sql);
 				baja= true;
@@ -131,8 +126,7 @@ public class DatosPelicula {
 	 */
 	public int obtenerPelicula(String nombre) {
 		int flag = -1;
-		Connection co =null;
-		ConectarBD conect = new ConectarBD();
+	
 		java.sql.Statement stm= null;
 		ResultSet rs=null;
 		
@@ -142,8 +136,7 @@ public class DatosPelicula {
 		Pelicula p = new Pelicula();
 		Categoria c = new Categoria();
 		
-		try {			
-			co= conect.conectarBD("movieflix") ;
+		try(Connection co=new ConectarBD().conectarBD("movieflix")) {			
 			stm=co.createStatement();
 			rs=stm.executeQuery(sql);
 			while (rs.next()) {
@@ -183,8 +176,7 @@ public class DatosPelicula {
 	 * @return
 	 */
 	public Boolean modificaPelicula(Pelicula pelicula) {
-		Connection co =null;
-		ConectarBD conect = new ConectarBD();
+	
 		java.sql.Statement stm= null;
 		int rs;		
 	
@@ -193,8 +185,8 @@ public class DatosPelicula {
 				
 		String sql="UPDATE PELICULA SET NOMBRE_PELICULA ='"+ pelicula.getNombre()+"', ANYO_ESTRENO ='"+ pelicula.getAnyoEstreno()+"', ID_CATEGORIA ='"+ pelicula.getCategoria().getId()+"'" +" WHERE ID_PELICULA ="+pelicula.getId();
 		System.out.println(sql);
-		try {
-			co= conect.conectarBD("movieflix") ;
+		try (Connection co=new ConectarBD().conectarBD("movieflix")){
+		
 			stm=co.createStatement();
 			rs= stm.executeUpdate(sql);
 			

@@ -1,7 +1,7 @@
 package servicios;
 
 import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Scanner;
 
 import beans.Categoria;
@@ -15,7 +15,7 @@ import utilidades.Menu;
 import utilidades.PedirCategoria;
 import utilidades.PedirCliente;
 import utilidades.PedirDatos;
-import datos.DatosCliente;
+
 public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 
 	
@@ -128,6 +128,11 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		ArrayList<Cliente> lista= new GenerarInforme().listarCliente();
 		lista.forEach(cliente -> System.out.println(cliente));
 	}
+	
+	/**
+	 * @author Asiel
+	 */
+	//Implementación que llama al método listarPeliculaCliente donde se registran las películas a las cual tiene acceso el cliente.
 	
 	@Override
 	public void listarPeliculaCliente() {
@@ -273,6 +278,11 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		
 	 return false;	
 	}
+	
+	/**
+	 * @author Asiel
+	 */
+	//Implementación que llama al método listarPeliculaNoVistaCliente donde se registra las películas que no ha visto el cliente.
 	
 	public void listarPeliculaNoVistaCliente() {
 		GenerarInforme f= new GenerarInforme();
