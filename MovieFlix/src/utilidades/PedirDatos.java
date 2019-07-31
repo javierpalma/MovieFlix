@@ -24,5 +24,14 @@ public class PedirDatos {
 		
 		return p;
 	}
+	public static Pelicula pideNombre() {
+		System.out.println("Nombre de la pelicula: ");
+		String nombre=new Scanner(System.in).nextLine();
+		
+		Pelicula p= new Pelicula();
+		p.setNombre(nombre);
+		
+		return p;
+	}
 
 }

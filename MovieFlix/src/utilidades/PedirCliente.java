@@ -9,6 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import beans.Cliente;
+import beans.Pelicula;
 
 /**
  * 
@@ -37,6 +38,14 @@ public class PedirCliente {
 		String ciudad=new Scanner(System.in).nextLine();
 		
 		return new Cliente(nombre,ld, ciudad);
+	}
+	
+	public static Cliente pideNombre() {
+		System.out.println("Nombre usuario: ");
+		String nombre=new Scanner(System.in).nextLine();
+
+		
+		return new Cliente(nombre,null, null);
 	}
 	
 	//poner posit morado porque se necesita para solo pedir nombre para borrar usuario
