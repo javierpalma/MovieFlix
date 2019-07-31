@@ -123,10 +123,11 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		Cliente cliente = new Cliente();
 		cliente = PedirCliente.pideCliente();
 		cliente = new DatosCliente().obtenerCliente(cliente.getNombreCliente());
-		System.out.println(cliente);
-		ArrayList<Pelicula> misPeliculas = f.listarPeliculasCliente(cliente);
-		for (Pelicula pelicula : misPeliculas) {
-			System.out.println(pelicula.getNombre()+"-"+pelicula.getAnyoEstreno()+"-"+pelicula.getCategoria().getNombre());
+		if(cliente!=null) {
+			ArrayList<Pelicula> misPeliculas = f.listarPeliculasCliente(cliente);
+			for (Pelicula pelicula : misPeliculas) {
+				System.out.println(pelicula.getNombre()+"-"+pelicula.getAnyoEstreno()+"-"+pelicula.getCategoria().getNombre());
+			}
 		}
 	}
 		
