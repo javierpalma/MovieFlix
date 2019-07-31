@@ -180,7 +180,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	
 	@Override
 	public void listarPeliculaPorValoracion() {	
-		
+		new GenerarInforme().listarPeliculasPorValoracion();
 	}
 	
 	/**

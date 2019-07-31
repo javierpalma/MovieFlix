@@ -17,6 +17,11 @@ import servicios.ConectarBD;
 
 public class GenerarInforme {
 	
+	/**
+	 * @author Jose Miguel
+	 * @return
+	 */
+	//Método que muestra la media de valoración de las películas
 	public ArrayList<Pelicula> listarPeliculasPorValoracion(){
 		
 		Connection co =null;
@@ -25,7 +30,7 @@ public class GenerarInforme {
 		ResultSet rs=null;
 		Logger logger = LogManager.getLogger(); 
 		
-		String sql="SELECT PELICULA.NOMBRE_PELICULA, PELICULA.ANYO_ESTRENO, CATEGORIA.NOMBRE FROM PELICULA, CATEGORIA WHERE PELICULA.ID_CATEGORIA = CATEGORIA.ID_CATEGORIA;";
+		String sql="SELECT AVG(CP.VALORACION) AS media, P.NOMBRE_PELICULA, P.ANYO_ESTRENO, C.nombre FROM CLIENTE_PELICULA AS CP, PELICULA AS P, categoria AS C WHERE p.id_pelicula = cp.id_pelicula AND p.id_categoria = c.id_categoria group by p.id_pelicula HAVING media IS NOT NULL ORDER BY media desc";
 		ArrayList<Pelicula> listaPelicula= new ArrayList<Pelicula>();
 		
 		try {			
@@ -36,13 +41,13 @@ public class GenerarInforme {
 	
 				Pelicula p = new Pelicula();
 				Categoria c = new Categoria();
-				p.setNombre(rs.getString(1));
-				p.setAnyoEstreno(rs.getInt(2));
-				c.setNombre(rs.getString(3));
-				p.setCategoria(c);
-				listaPelicula.add(p);
-				//System.out.println(p);
 				
+				String media = rs.getString(1);
+				p.setNombre(rs.getString(2));
+				p.setAnyoEstreno(rs.getInt(3));
+				c.setNombre(rs.getString(4));
+				p.setCategoria(c);
+				System.out.println(p.getNombre()+"-"+p.getAnyoEstreno()+"-"+p.getCategoria().getNombre()+"-"+media);			
 			}
 			stm.close();
 			rs.close();
