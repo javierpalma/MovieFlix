@@ -33,5 +33,18 @@ public class PedirDatos {
 		
 		return p;
 	}
+	
+	public static int pideValoracion() {
+		int valoracion =0;
+		
+		do {
+			System.out.println("Valora la pelicula del 1-10: ");
+			valoracion=new Scanner(System.in).nextInt();
+			
+		}while (valoracion < 1 || valoracion >10 );
+		
+		
+		return valoracion;
+	}
 
 }
