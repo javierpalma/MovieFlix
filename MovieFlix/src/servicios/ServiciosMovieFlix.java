@@ -209,22 +209,18 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		}
 		
 	}
-	
 	@Override
 	public void bajaCliente() {
 		DatosCliente dc = new DatosCliente();
+		Cliente c = new Cliente();
+		 c = PedirCliente.pideNombre();
 		
-		String nombreCliente =  PedirCliente.borrarCliente();
-		//dc.obtenerCliente(c.getNombreCliente());
-		
-		if(dc.obtenerCliente(nombreCliente) != null) {
+		if(dc.obtenerCliente(c.getNombreCliente()) != null) {
 			//llamar al altarCliente de la clase DatosCliente
-			dc.bajaCliente(nombreCliente);
+			dc.bajaCliente(c);
 		}else {
 			System.out.println("El cliente no existe, no se puede borrar.");
-		}
-		
-		
+		}	
 	}
 	
 	/**
