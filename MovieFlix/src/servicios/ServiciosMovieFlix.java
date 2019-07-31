@@ -129,6 +129,11 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		lista.forEach(cliente -> System.out.println(cliente));
 	}
 	
+	/**
+	 * @author Asiel
+	 */
+	//Implementación que llama al método listarPeliculaCliente donde se registran las películas a las cual tiene acceso el cliente.
+	
 	@Override
 	public void listarPeliculaCliente() {
 		GenerarInforme f= new GenerarInforme();
@@ -273,6 +278,11 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 		
 	 return false;	
 	}
+	
+	/**
+	 * @author Asiel
+	 */
+	//Implementación que llama al método listarPeliculaNoVistaCliente donde se registra las películas que no ha visto el cliente.
 	
 	public void listarPeliculaNoVistaCliente() {
 		GenerarInforme f= new GenerarInforme();
