@@ -126,6 +126,7 @@ public class ServiciosMovieFlix implements I_ServiciosMovieFlix {
 	@Override
 	public void listarClientes() {
 		
+		new GenerarInforme().listarClientes();
 	}
 	
 	@Override
