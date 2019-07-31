@@ -250,7 +250,7 @@ public class DatosCliente {
 		
 		boolean actualizar=false;
 				
-		String sql="UPDATE CLIENTE_PELICULA SET VISTA = TRUE'"+ " WHERE ID_CLIENTE ="+cliente.getIdCliente()+"AND ID_PELICULA ="+pelicula.getId();
+		String sql="UPDATE CLIENTE_PELICULA SET CLIENTE_PELICULA.VISTA = TRUE WHERE ID_CLIENTE = "+cliente.getIdCliente()+" AND ID_PELICULA = "+pelicula.getId()+";";
 		System.out.println(sql); 
 		try {
 			co= conect.conectarBD("movieflix") ;
